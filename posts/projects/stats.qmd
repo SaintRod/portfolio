@@ -1,0 +1,18 @@
+---
+title: "Statistics"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# Hypothesis testing
+
+During my tenure at Consumers Energy I was asked to help introduce the notion of testing.
+The focus was on marketing programs.
+This was a new-ish department and there were lots of opportunities.
+
+My main focus was to build relationships with stakeholders and gently educate them about testing.
+Below is an example of some of the concepts and tools I used.
+
+- [report](https://rpubs.com/kaladin_stormblessed/binomial_example_report)

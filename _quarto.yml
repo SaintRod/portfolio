@@ -1,0 +1,65 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Santiago Rodriguez"
+  site-url: ""
+  reader-mode: true
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Portfolio
+        href: about.qmd
+    right:
+      - icon: file-person-fill
+        href: posts/resume/resume.pdf
+      - icon: linkedin
+        href: https://www.linkedin.com/in/santiagorodriguez91/
+      - icon: github
+        href: https://github.com/SaintRod/
+      - icon: gitlab
+        href: https://gitlab.com/hail_hydra
+
+  sidebar:
+    id: id-portfolio
+    style: "docked"
+    search: true
+    contents:
+        - text: Blogs
+          href: posts/blogs/blogs.qmd
+          contents:
+            - posts/blogs/fda.qmd
+        - text: Projects
+          href: posts/projects/projects.qmd
+          contents:
+            - posts/projects/analyses.qmd
+            - posts/projects/automation.qmd
+            - posts/projects/ml.qmd
+            - posts/projects/stats.qmd
+            - posts/projects/time-series.qmd
+            - posts/projects/webapps.qmd
+            
+        - text: Talks
+          href: posts/talks/talks.qmd
+          contents:
+            - posts/talks/r-in-energy.qmd
+        - text: Other
+          href: posts/other/other.qmd
+          contents:
+            - posts/other/study-guides.qmd
+            - posts/other/internet-outage-detection.qmd
+
+  page-footer: 
+    background: dark 
+    left: Copyright 2024, Santiago Rodriguez
+    right: Built with Quarto
+
+format:
+  html:
+    theme: flatly
+    toc: true
+
+
+

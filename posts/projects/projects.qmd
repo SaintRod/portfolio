@@ -1,0 +1,22 @@
+---
+title: Projects
+format:
+  html:
+    toc: true
+editor: source
+---
+
+This is the largest section, and the one hiring manager and recruiters will most likely be interested in.
+
+In this section you'll find code, output, and more!
+My interests span a wide range of topics, from building web apps to machine learning models.
+
+**Areas I'd like to explore further**:
+
+- RAG
+- deep learning
+- auto diff
+- optimization
+- Genie in Julia
+- Shiny for Python
+- build an API

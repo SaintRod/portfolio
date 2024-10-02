@@ -1,0 +1,14 @@
+---
+title: "About Me"
+image: static/sr.jpg
+about:
+  template: solana
+---
+
+Howdy.
+
+My name is Santiago Rodriguez and I am a statistican, statistical programmer, machine learning practioner, and a life-long learner.
+
+I enjoy traveling. Some of my favorite places to visit are Norway and Japan.
+
+The best way to contact me is throught LinkedIn.

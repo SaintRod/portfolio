@@ -1,0 +1,13 @@
+---
+title: "Automation"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# Language agnostic project template
+
+I present a handy shell script to automate and standardize data analysis project structures. Yes, several language-specific templates exist, but using them assumes the language for the project has already been chosen. Often when planning a project, I don't select a language until later in the planning stage. Also, much of a project's structure is language-agnostic so there's no need to wait to lay the foundation.
+
+- [code](https://github.com/SaintRod/multi-lang-project-template)

@@ -1,0 +1,17 @@
+---
+title: "Functional Data Analysis"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# About
+
+Since first learning about splines c.2020 I have been fascinated with functional data analysis (FDA).
+
+Over the years I've explored applications of FDA at work and for personal projects.
+I created this blog to collect these works and house them under one roof.
+The blog also provides me an avenue to share thoughts about the work that might not fit into the work itself, such as how the document was created, why I used certain software, etc.
+
+The blog can be accessed [here](https://saintrod.github.io/fda-blog/).

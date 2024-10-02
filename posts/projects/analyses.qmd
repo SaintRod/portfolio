@@ -1,0 +1,15 @@
+---
+title: "Analyses"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# Arxiv Statistics Packages Analysis
+
+An analysis of Julia, Python, and R packages on the statistics section of Arxiv.
+The term "R package" had the most results, followed by Python then Julia.
+
+- [report](https://saintrod.github.io/arxiv_pkg_analysis/)
+- [code](https://github.com/SaintRod/arxiv_pkg_analysis)

@@ -1,0 +1,14 @@
+---
+title: Blogs
+format:
+  html:
+    toc: true
+editor: source
+---
+
+I enjoy writing.
+But I don't enjoy paywalls.
+So, I write on open platforms, such as GitHub Pages or [Quarto Pubs](https://quartopub.com/).
+
+In this section you'll find collections of writings.
+Enjoy!

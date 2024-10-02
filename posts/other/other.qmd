@@ -1,0 +1,9 @@
+---
+title: Other
+format:
+  html:
+    toc: true
+editor: source
+---
+
+In this section you'll find a collection of random things, from notes I took while reading a book or a video online.
