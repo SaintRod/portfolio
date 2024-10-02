@@ -36,9 +36,9 @@ website:
           contents:
             - posts/projects/analyses.qmd
             - posts/projects/automation.qmd
-            - posts/projects/ml.qmd
+            #- posts/projects/ml.qmd
             - posts/projects/stats.qmd
-            - posts/projects/time-series.qmd
+            #- posts/projects/time-series.qmd
             - posts/projects/webapps.qmd
             
         - text: Talks
