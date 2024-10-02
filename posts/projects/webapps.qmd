@@ -17,6 +17,7 @@ The goal of this app is to help Texans interact with Texas Parks & Wildlife stat
 - web app [code](https://gitlab.com/texas_parks_and_wildlife/table_utilities/webapp)
 - data layer [code](https://gitlab.com/texas_parks_and_wildlife/table_utilities/data)
 - [website](http://tableswebapp.thealgo.group/)
+- [Shiny contest 2024](https://forum.posit.co/t/texas-parks-wildlife-drive-time-distance-calculator-shiny-contest-submission/190999)
 
 The web app is hosted on AWS using their free tier.
 Once the 12-months free expires, depending on the cose to maintain the website the link above my not exist.
