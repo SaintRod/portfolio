@@ -6,10 +6,21 @@ format:
 editor: source
 ---
 
-# Arxiv Statistics Packages Analysis
+# Arxiv packages analysis
 
 An analysis of Julia, Python, and R packages on the statistics section of Arxiv.
 The term "R package" had the most results, followed by Python then Julia.
 
 - [report](https://saintrod.github.io/arxiv_pkg_analysis/)
 - [code](https://github.com/SaintRod/arxiv_pkg_analysis)
+
+# Internet outage detection using Julia
+
+Years ago I had a faulty internet router.
+The problem was I didn't know it was the router yet.
+Eventually I set up a shell script to ping the router and log results.
+I analyzed the results and discovered that the router was the issue.
+I replaced the router with a Gryphon router - if you haven't heard of it, I highly recommend it.
+Additionally, this was my first foray into the work of programming with Julia.
+
+- [report](https://kaladin-stormblessed.quarto.pub/internet-outage-detection/)
