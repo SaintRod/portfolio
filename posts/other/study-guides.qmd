@@ -7,3 +7,9 @@ editor: source
 ---
 
 # Data structures and algorithms
+
+I find it helpful to make my notes available online so that I can access them from anywhere.
+The following notes are from lessons on data structures and algorithms.
+
+- [data structures](https://saintrod.github.io/data-strucs-and-algos/posts/data-structures/post.html)
+- [algorithms](https://saintrod.github.io/data-strucs-and-algos/posts/algorithms/post.html)
