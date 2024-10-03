@@ -20,7 +20,7 @@ The goal of this app is to help Texans interact with Texas Parks & Wildlife stat
 - [Shiny contest 2024](https://forum.posit.co/t/texas-parks-wildlife-drive-time-distance-calculator-shiny-contest-submission/190999)
 
 The web app is hosted on AWS using their free tier.
-Once the 12-months free expires, depending on the cose to maintain the website the link above my not exist.
+Once the 12-months free expires, depending on the cost to maintain the website the link above my not exist.
 However, the code is readily available.
 
 ## Technical Details
@@ -48,7 +48,7 @@ Software:
 - HERE API for route calculation logic
 - Docker
 
-# Startified sampling tool
+# Stratified sampling tool
 
 During my tenure at Consumers Energy, my sibling team was responsible for generating customer contact lists for Marketing teams.
 Mostly these lists were created via simple random sampling.

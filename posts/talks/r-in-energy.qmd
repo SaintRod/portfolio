@@ -1,6 +1,6 @@
 ---
 title: "R in Energy"
-subtitle: Applications of Functional Data Analaysis
+subtitle: Applications of Functional Data Analysis
 format:
   html:
     toc: true
