@@ -4,8 +4,7 @@ project:
 
 website:
   title: "Santiago Rodriguez"
-  site-url: ""
-  reader-mode: true
+  site-url: "https://saintrod.github.io/portfolio/"
   navbar:
     left:
       - text: Home
@@ -26,12 +25,13 @@ website:
     id: id-portfolio
     style: "docked"
     search: true
+    pinned: true
     contents:
-        - text: Blogs
+        - section: Blogs
           href: posts/blogs/blogs.qmd
           contents:
             - posts/blogs/fda.qmd
-        - text: Projects
+        - section: Projects
           href: posts/projects/projects.qmd
           contents:
             - posts/projects/analyses.qmd
@@ -40,12 +40,11 @@ website:
             - posts/projects/stats.qmd
             #- posts/projects/time-series.qmd
             - posts/projects/webapps.qmd
-            
-        - text: Talks
+        - section: Talks
           href: posts/talks/talks.qmd
           contents:
             - posts/talks/r-in-energy.qmd
-        - text: Other
+        - section: Other
           href: posts/other/other.qmd
           contents:
             - posts/other/study-guides.qmd
@@ -53,7 +52,7 @@ website:
 
   page-footer: 
     background: dark 
-    left: Copyright 2024, Santiago Rodriguez
+    left: © 2024 Santiago Rodriguez
     right: Built with Quarto
 
 format:
