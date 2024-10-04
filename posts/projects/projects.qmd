@@ -11,7 +11,7 @@ This is the largest section, and the one hiring manager and recruiters will most
 In this section you'll find code, output, and more!
 My interests span a wide range of topics, from building web apps to machine learning models.
 
-**Areas I'd like to explore further**:
+The following are areas I'd like to explore further, presented in no particular order.
 
 - RAG
 - deep learning
@@ -20,3 +20,4 @@ My interests span a wide range of topics, from building web apps to machine lear
 - Genie in Julia
 - Shiny for Python
 - build an API
+- causal ML

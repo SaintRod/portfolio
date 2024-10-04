@@ -44,7 +44,7 @@
     "href": "posts/projects/projects.html",
     "title": "Projects",
     "section": "",
-    "text": "This is the largest section, and the one hiring manager and recruiters will most likely be interested in.\nIn this section you’ll find code, output, and more! My interests span a wide range of topics, from building web apps to machine learning models.\nAreas I’d like to explore further:\n\nRAG\ndeep learning\nauto diff\noptimization\nGenie in Julia\nShiny for Python\nbuild an API",
+    "text": "This is the largest section, and the one hiring manager and recruiters will most likely be interested in.\nIn this section you’ll find code, output, and more! My interests span a wide range of topics, from building web apps to machine learning models.\nThe following are areas I’d like to explore further, presented in no particular order.\n\nRAG\ndeep learning\nauto diff\noptimization\nGenie in Julia\nShiny for Python\nbuild an API\ncausal ML",
     "crumbs": [
       "Projects"
     ]
@@ -133,5 +133,12 @@
     "crumbs": [
       "Other"
     ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Thank you for visiting!",
+    "section": "",
+    "text": "UAI"
   }
 ]

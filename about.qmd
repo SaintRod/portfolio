@@ -3,4 +3,4 @@ title: Thank you for visiting!
 sidebar: id-portfolio
 ---
 
-![](https://c.pxhere.com/photos/61/a8/mountain_range_lake_reflection_night_sky_star-1408496.jpg!d)
+![UAI](static/uai-analytics-value-curve.png)
