@@ -48,7 +48,10 @@ website:
           href: posts/other/other.qmd
           contents:
             - posts/other/study-guides.qmd
-            - posts/other/internet-outage-detection.qmd
+        # - section: visualizations
+        #   href: "posts/visualizations/viz.qmd"
+        #   contents:
+        #     - posts/visualizations/xxx.qmd
 
   page-footer: 
     background: dark 
