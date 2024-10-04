@@ -13,3 +13,9 @@ The following notes are from lessons on data structures and algorithms.
 
 - [data structures](https://saintrod.github.io/data-strucs-and-algos/posts/data-structures/post.html)
 - [algorithms](https://saintrod.github.io/data-strucs-and-algos/posts/algorithms/post.html)
+
+The course provided Python examples, and I replicated these examples using Julia and R.
+
+- [Julia](https://github.com/SaintRod/data-strucs-and-algos/tree/main/code/julia)
+- [Pyton](https://github.com/SaintRod/data-strucs-and-algos/tree/main/code/py)
+- [R](https://github.com/SaintRod/data-strucs-and-algos/tree/main/code/r)
