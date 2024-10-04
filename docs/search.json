@@ -18,28 +18,6 @@
     ]
   },
   {
-    "objectID": "posts/projects/webapps.html",
-    "href": "posts/projects/webapps.html",
-    "title": "Web Apps",
-    "section": "",
-    "text": "Years ago when I moved to Texas from South Florida I missed going fishing. I discovered that during winter months, Texas Parks & Wildlife (TPWD) stocks local fishing areas with trout. This was music to my ears. However, the static HTML table provided by TPWD wasn’t conducive to getting outdoors. The problem with the static table is it only provides the fishing area and the city, and it’s too tedious to search each location individually on Google Maps for example. So, I built a Shiny app for myself and hosted it on ShinyApps.io (link). The app was successful and I was able to go fishing. The main goal of this version was to help me find the nearest fishing location and to be able to sort and filter locations.\nRecently, I decided to learn more about putting a Shiny app in production. I decided to focus on the TPWD trout POC I built years ago because I thought others could benefit from having a better interface to the trout stocking data. The scope of the app expanded beyond just the trout stocking data though as I realized that other TPWD resources were useful but not interactive. The static nature of the resources might deter some people from getting outdoors. So, I built this Shiny app.\nThe goal of this app is to help Texans interact with Texas Parks & Wildlife static online resources and to help Texans get outdoors.\n\nweb app code\ndata layer code\nwebsite\nShiny contest 2024\n\nThe web app is hosted on AWS using their free tier. Once the 12-months free expires, depending on the cost to maintain the website the link above my not exist. However, the code is readily available.\n\n\nFunctionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
-    "crumbs": [
-      "Projects",
-      "Web Apps"
-    ]
-  },
-  {
-    "objectID": "posts/projects/webapps.html#technical-details",
-    "href": "posts/projects/webapps.html#technical-details",
-    "title": "Web Apps",
-    "section": "",
-    "text": "Functionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
-    "crumbs": [
-      "Projects",
-      "Web Apps"
-    ]
-  },
-  {
     "objectID": "posts/projects/projects.html",
     "href": "posts/projects/projects.html",
     "title": "Projects",
@@ -50,15 +28,81 @@
     ]
   },
   {
-    "objectID": "posts/projects/stats.html",
-    "href": "posts/projects/stats.html",
-    "title": "Statistics",
+    "objectID": "posts/projects/web-apps/tpwd.html",
+    "href": "posts/projects/web-apps/tpwd.html",
+    "title": "Texas Parks & Wildlife",
     "section": "",
-    "text": "Hypothesis testing\nDuring my tenure at Consumers Energy I was asked to help introduce the notion of testing. The focus was on marketing programs. This was a new-ish department and there were lots of opportunities.\nMy main focus was to build relationships with stakeholders and gently educate them about testing. Below is an example of some of the concepts and tools I used.\n\nreport",
+    "text": "Years ago when I moved to Texas from South Florida I missed going fishing. I discovered that during winter months, Texas Parks & Wildlife (TPWD) stocks local fishing areas with trout. This was music to my ears. However, the static HTML table provided by TPWD wasn’t conducive to getting outdoors. The problem with the static table is it only provides the fishing area and the city, and it’s too tedious to search each location individually on Google Maps for example. So, I built a Shiny app for myself and hosted it on ShinyApps.io (link). The app was successful and I was able to go fishing. The main goal of this version was to help me find the nearest fishing location and to be able to sort and filter locations.\nRecently, I decided to learn more about putting a Shiny app in production. I decided to focus on the TPWD trout POC I built years ago because I thought others could benefit from having a better interface to the trout stocking data. The scope of the app expanded beyond just the trout stocking data though as I realized that other TPWD resources were useful but not interactive. The static nature of the resources might deter some people from getting outdoors. So, I built this Shiny app.\nThe goal of this app is to help Texans interact with Texas Parks & Wildlife static online resources and to help Texans get outdoors.\n\nweb app code\ndata layer code\nwebsite\nShiny contest 2024\n\nThe web app is hosted on AWS using their free tier. Once the 12-months free expires, depending on the cost to maintain the website the link above my not exist. However, the code is readily available.\n\n\nFunctionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
     "crumbs": [
       "Projects",
-      "Statistics"
+      "Web Apps",
+      "Texas Parks & Wildlife"
     ]
+  },
+  {
+    "objectID": "posts/projects/web-apps/tpwd.html#technical-details",
+    "href": "posts/projects/web-apps/tpwd.html#technical-details",
+    "title": "Texas Parks & Wildlife",
+    "section": "",
+    "text": "Functionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
+    "crumbs": [
+      "Projects",
+      "Web Apps",
+      "Texas Parks & Wildlife"
+    ]
+  },
+  {
+    "objectID": "posts/projects/analyses/arxiv-stats-pkgs.html",
+    "href": "posts/projects/analyses/arxiv-stats-pkgs.html",
+    "title": "Arxiv Packages Analysis",
+    "section": "",
+    "text": "About\nAn analysis of Julia, Python, and R packages on the statistics section of Arxiv. The term “R package” had the most results, followed by Python then Julia.\n\nreport\ncode",
+    "crumbs": [
+      "Projects",
+      "Analyses",
+      "Arxiv Packages Analysis"
+    ]
+  },
+  {
+    "objectID": "posts/projects/analyses/internet-outage.html",
+    "href": "posts/projects/analyses/internet-outage.html",
+    "title": "Internet Outage Detection",
+    "section": "",
+    "text": "About\nYears ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.\n\nreport",
+    "crumbs": [
+      "Projects",
+      "Analyses",
+      "Internet Outage Detection"
+    ]
+  },
+  {
+    "objectID": "posts/projects/stats/stats.html",
+    "href": "posts/projects/stats/stats.html",
+    "title": "Statistics",
+    "section": "",
+    "text": "Overview\n\nA primer on hypothesis testing, link",
+    "crumbs": [
+      "Projects",
+      "Stats"
+    ]
+  },
+  {
+    "objectID": "posts/projects/tools/tools.html",
+    "href": "posts/projects/tools/tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "Overview\n\nA shell script that creates data analysis project templates, link",
+    "crumbs": [
+      "Projects",
+      "Tools"
+    ]
+  },
+  {
+    "objectID": "posts/viz/viz.html",
+    "href": "posts/viz/viz.html",
+    "title": "Visualizations",
+    "section": "",
+    "text": "Overview\n\nA dashboard to track my job search in 2024, link"
   },
   {
     "objectID": "posts/talks/r-in-energy.html",
@@ -103,25 +147,68 @@
     ]
   },
   {
-    "objectID": "posts/projects/automation.html",
-    "href": "posts/projects/automation.html",
-    "title": "Automation",
+    "objectID": "posts/viz/job-search-dashboard.html",
+    "href": "posts/viz/job-search-dashboard.html",
+    "title": "A Job Search Tracker",
     "section": "",
-    "text": "Language agnostic project template\nI present a handy shell script to automate and standardize data analysis project structures. Yes, several language-specific templates exist, but using them assumes the language for the project has already been chosen. Often when planning a project, I don’t select a language until later in the planning stage. Also, much of a project’s structure is language-agnostic so there’s no need to wait to lay the foundation.\n\ncode",
+    "text": "About\nIn August my spouse and I welcomed a tiny human into our lives. I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go. This dashboard was created to track my job search during that time. However, anyone can use the dashboard as the code is open-source. The repo README provides instructions on how to do this."
+  },
+  {
+    "objectID": "posts/projects/tools/mult-lang-proj-template.html",
+    "href": "posts/projects/tools/mult-lang-proj-template.html",
+    "title": "A Language agnostic project template",
+    "section": "",
+    "text": "About\nI present a handy shell script to automate and standardize data analysis project structures. Yes, several language-specific templates exist, but using them assumes the language for the project has already been chosen. Often when planning a project, I don’t select a language until later in the planning stage. Also, much of a project’s structure is language-agnostic so there’s no need to wait to lay the foundation.\n\ncode",
     "crumbs": [
       "Projects",
-      "Automation"
+      "Tools",
+      "A Language agnostic project template"
     ]
   },
   {
-    "objectID": "posts/projects/analyses.html",
-    "href": "posts/projects/analyses.html",
+    "objectID": "posts/projects/stats/hypothesis-testing-primer.html",
+    "href": "posts/projects/stats/hypothesis-testing-primer.html",
+    "title": "A Primer on Hypothesis Testing",
+    "section": "",
+    "text": "Hypothesis testing\nDuring my tenure at Consumers Energy I was asked to help introduce the notion of testing. The focus was on marketing programs. This was a new-ish department and there were lots of opportunities.\nMy main focus was to build relationships with stakeholders and gently educate them about testing. Below is an example of some of the concepts and tools I used.\n\nreport",
+    "crumbs": [
+      "Projects",
+      "Stats",
+      "A Primer on Hypothesis Testing"
+    ]
+  },
+  {
+    "objectID": "posts/projects/analyses/analyses.html",
+    "href": "posts/projects/analyses/analyses.html",
     "title": "Analyses",
     "section": "",
-    "text": "Arxiv packages analysis\nAn analysis of Julia, Python, and R packages on the statistics section of Arxiv. The term “R package” had the most results, followed by Python then Julia.\n\nreport\ncode\n\n\n\nInternet outage detection using Julia\nYears ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.\n\nreport",
+    "text": "Overview\n\nAn analysis of languages used to create statistics packages on Arxiv, link\nUsing Julia to analyze router packet data, link",
     "crumbs": [
       "Projects",
       "Analyses"
+    ]
+  },
+  {
+    "objectID": "posts/projects/web-apps/strat-sampling-tool.html",
+    "href": "posts/projects/web-apps/strat-sampling-tool.html",
+    "title": "Stratified Sampling",
+    "section": "",
+    "text": "About\nDuring my tenure at Consumers Energy, my sibling team was responsible for generating customer contact lists for Marketing teams. Mostly these lists were created via simple random sampling. However, there were some astute stakeholders that wanted to test if stratified sampling would yield more accurate results. Initially, the team accomplished this manually, but it was error-prone and onerous. So, I built a Shiny app for them to automate the task. Below is a replica of that work.\n\nwebapp\ncode",
+    "crumbs": [
+      "Projects",
+      "Web Apps",
+      "Stratified Sampling"
+    ]
+  },
+  {
+    "objectID": "posts/projects/web-apps/web-apps.html",
+    "href": "posts/projects/web-apps/web-apps.html",
+    "title": "Web Apps",
+    "section": "",
+    "text": "Overview\n\nA Texas Parks and Wildlife resource, link\nA tool to help create stratified samples, , link",
+    "crumbs": [
+      "Projects",
+      "Web Apps"
     ]
   },
   {

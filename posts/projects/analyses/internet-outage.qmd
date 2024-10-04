@@ -1,20 +1,12 @@
 ---
-title: "Analyses"
+title: "Internet Outage Detection"
 format:
   html:
     toc: true
 editor: source
 ---
 
-# Arxiv packages analysis
-
-An analysis of Julia, Python, and R packages on the statistics section of Arxiv.
-The term "R package" had the most results, followed by Python then Julia.
-
-- [report](https://saintrod.github.io/arxiv_pkg_analysis/)
-- [code](https://github.com/SaintRod/arxiv_pkg_analysis)
-
-# Internet outage detection using Julia
+# About
 
 Years ago I had a faulty internet router.
 The problem was I didn't know it was the router yet.
@@ -24,3 +16,7 @@ I replaced the router with a Gryphon router - if you haven't heard of it, I high
 Additionally, this was my first foray into the work of programming with Julia.
 
 - [report](https://kaladin-stormblessed.quarto.pub/internet-outage-detection/)
+
+::: {=html}
+<iframe src="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/" width="100%" height="700px"></iframe>
+:::

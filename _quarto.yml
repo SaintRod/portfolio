@@ -34,12 +34,30 @@ website:
         - section: Projects
           href: posts/projects/projects.qmd
           contents:
-            - posts/projects/analyses.qmd
-            - posts/projects/automation.qmd
-            #- posts/projects/ml.qmd
-            - posts/projects/stats.qmd
-            #- posts/projects/time-series.qmd
-            - posts/projects/webapps.qmd
+            - section: Analyses
+              href: posts/projects/analyses/analyses.qmd
+              contents: 
+                - posts/projects/analyses/arxiv-stats-pkgs.qmd
+                - posts/projects/analyses/internet-outage.qmd
+            # - section: Causal ML
+            #   href: 
+            # - section: ML
+            #   href: posts/projects/ml/ml.qmd
+            - section: Stats
+              href: posts/projects/stats/stats.qmd
+              contents:
+                - posts/projects/stats/hypothesis-testing-primer.qmd
+            # - section: Time Series
+            #   href: posts/projects/time-series/time-series.qmd
+            - section: Tools
+              href: posts/projects/tools/tools.qmd
+              contents:
+                - posts/projects/tools/mult-lang-proj-template.qmd
+            - section: Web Apps
+              href: posts/projects/web-apps/web-apps.qmd
+              contents:
+                - posts/projects/web-apps/tpwd.qmd
+                - posts/projects/web-apps/strat-sampling-tool.qmd
         - section: Talks
           href: posts/talks/talks.qmd
           contents:
@@ -48,10 +66,10 @@ website:
           href: posts/other/other.qmd
           contents:
             - posts/other/study-guides.qmd
-        # - section: visualizations
+        # - section: Visualizations
         #   href: "posts/visualizations/viz.qmd"
         #   contents:
-        #     - posts/visualizations/xxx.qmd
+        #     - posts/visualizations/job-search-dashboard.qmd
 
   page-footer: 
     background: dark 

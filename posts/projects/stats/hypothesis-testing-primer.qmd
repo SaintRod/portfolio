@@ -1,5 +1,5 @@
 ---
-title: "Statistics"
+title: "A Primer on Hypothesis Testing"
 format:
   html:
     toc: true

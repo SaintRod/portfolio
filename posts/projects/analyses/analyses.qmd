@@ -1,0 +1,12 @@
+---
+title: "Analyses"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# Overview
+
+- An analysis of languages used to create statistics packages on Arxiv, [link](arxiv-stats-pkgs.qmd)
+- Using Julia to analyze router packet data, [link](internet-outage.qmd)

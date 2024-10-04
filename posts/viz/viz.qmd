@@ -1,0 +1,11 @@
+---
+title: "Visualizations"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# Overview
+
+- A dashboard to track my job search in 2024, [link](job-search-dashboard.qmd)

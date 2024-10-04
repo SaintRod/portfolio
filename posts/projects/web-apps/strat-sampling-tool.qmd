@@ -1,0 +1,19 @@
+---
+title: "Stratified Sampling"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# About
+
+During my tenure at Consumers Energy, my sibling team was responsible for generating customer contact lists for Marketing teams.
+Mostly these lists were created via simple random sampling.
+However, there were some astute stakeholders that wanted to test if stratified sampling would yield more accurate results.
+Initially, the team accomplished this manually, but it was error-prone and onerous.
+So, I built a Shiny app for them to automate the task.
+Below is a replica of that work.
+
+- [webapp](https://kaladin-stormblessed.shinyapps.io/SamplingTool/)
+- [code](https://gitlab.com/hail_hydra/sampling_tool)
