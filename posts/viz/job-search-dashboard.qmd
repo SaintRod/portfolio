@@ -9,11 +9,15 @@ editor: source
 # About
 
 In August my spouse and I welcomed a tiny human into our lives.
-I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go.
-This dashboard was created to track my job search during that time.
+Life was good.
+And then while I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go.
+
+This dashboard was created to track my job search post Deloitte.
 However, anyone can use the dashboard as the code is open-source.
 The repo README provides instructions on how to do this.
 
+- [code](https://gitlab.com/hail_hydra/job-search)
+
 ::: {=html}
-<iframe src="" width="100%" height="700px"></iframe>
+<iframe src="https://job-search-cd9a22.gitlab.io/" width="100%" height="700px"></iframe>
 :::

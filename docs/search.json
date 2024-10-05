@@ -102,7 +102,10 @@
     "href": "posts/viz/viz.html",
     "title": "Visualizations",
     "section": "",
-    "text": "Overview\n\nA dashboard to track my job search in 2024, link"
+    "text": "Overview\n\nA dashboard to track my job search in 2024, link",
+    "crumbs": [
+      "Visualizations"
+    ]
   },
   {
     "objectID": "posts/talks/r-in-energy.html",
@@ -151,7 +154,7 @@
     "href": "posts/viz/job-search-dashboard.html",
     "title": "A Job Search Tracker",
     "section": "",
-    "text": "About\nIn August my spouse and I welcomed a tiny human into our lives. I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go. This dashboard was created to track my job search during that time. However, anyone can use the dashboard as the code is open-source. The repo README provides instructions on how to do this."
+    "text": "About\nIn August my spouse and I welcomed a tiny human into our lives. Life was good. And then while I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go.\nThis dashboard was created to track my job search post Deloitte. However, anyone can use the dashboard as the code is open-source. The repo README provides instructions on how to do this.\n\ncode"
   },
   {
     "objectID": "posts/projects/tools/mult-lang-proj-template.html",
