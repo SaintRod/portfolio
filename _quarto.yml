@@ -58,6 +58,10 @@ website:
               contents:
                 - posts/projects/web-apps/tpwd.qmd
                 - posts/projects/web-apps/strat-sampling-tool.qmd
+            - section: Visualizations
+              href: "posts/viz/viz.qmd"
+              contents:
+                - posts/viz/job-search-dashboard.qmd
         - section: Talks
           href: posts/talks/talks.qmd
           contents:
@@ -66,10 +70,6 @@ website:
           href: posts/other/other.qmd
           contents:
             - posts/other/study-guides.qmd
-        - section: Visualizations
-          href: "posts/viz/viz.qmd"
-          contents:
-            - posts/visualizations/job-search-dashboard.qmd
 
   page-footer: 
     background: dark 
