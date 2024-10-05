@@ -53,15 +53,15 @@ website:
               href: posts/projects/tools/tools.qmd
               contents:
                 - posts/projects/tools/mult-lang-proj-template.qmd
+            - section: Visualizations
+              href: "posts/viz/viz.qmd"
+              contents:
+                - posts/viz/job-search-dashboard.qmd
             - section: Web Apps
               href: posts/projects/web-apps/web-apps.qmd
               contents:
                 - posts/projects/web-apps/tpwd.qmd
                 - posts/projects/web-apps/strat-sampling-tool.qmd
-            - section: Visualizations
-              href: "posts/viz/viz.qmd"
-              contents:
-                - posts/viz/job-search-dashboard.qmd
         - section: Talks
           href: posts/talks/talks.qmd
           contents:
