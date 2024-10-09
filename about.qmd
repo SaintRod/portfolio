@@ -3,4 +3,6 @@ title: Thank you for visiting!
 sidebar: id-portfolio
 ---
 
+<br/>
+
 ![UAI](static/uai-analytics-value-curve.png)
