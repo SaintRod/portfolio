@@ -11,7 +11,7 @@
     "href": "posts/other/study-guides.html",
     "title": "Study Guides",
     "section": "",
-    "text": "Data structures and algorithms\nI find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.\n\ndata structures\nalgorithms\n\nThe course provided Python examples, and I replicated these examples using Julia and R.\n\nJulia\nPyton\nR",
+    "text": "Data structures and algorithms\nI find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.\n\ndata structures\nalgorithms\n\nThe course provided Python examples, and I replicated these examples using Julia and R.\n\nJulia\nPython\nR",
     "crumbs": [
       "Other",
       "Study Guides"
@@ -28,126 +28,85 @@
     ]
   },
   {
-    "objectID": "posts/projects/web-apps/tpwd.html",
-    "href": "posts/projects/web-apps/tpwd.html",
-    "title": "Texas Parks & Wildlife",
+    "objectID": "posts/projects/time-series/household-forecasting.html",
+    "href": "posts/projects/time-series/household-forecasting.html",
+    "title": "Forecasting My Household’s Energy Consumption",
     "section": "",
-    "text": "Years ago when I moved to Texas from South Florida I missed going fishing. I discovered that during winter months, Texas Parks & Wildlife (TPWD) stocks local fishing areas with trout. This was music to my ears. However, the static HTML table provided by TPWD wasn’t conducive to getting outdoors. The problem with the static table is it only provides the fishing area and the city, and it’s too tedious to search each location individually on Google Maps for example. So, I built a Shiny app for myself and hosted it on ShinyApps.io (link). The app was successful and I was able to go fishing. The main goal of this version was to help me find the nearest fishing location and to be able to sort and filter locations.\nRecently, I decided to learn more about putting a Shiny app in production. I decided to focus on the TPWD trout POC I built years ago because I thought others could benefit from having a better interface to the trout stocking data. The scope of the app expanded beyond just the trout stocking data though as I realized that other TPWD resources were useful but not interactive. The static nature of the resources might deter some people from getting outdoors. So, I built this Shiny app.\nThe goal of this app is to help Texans interact with Texas Parks & Wildlife static online resources and to help Texans get outdoors.\n\nweb app code\ndata layer code\nwebsite\nShiny contest 2024\n\nThe web app is hosted on AWS using their free tier. Once the 12-months free expires, depending on the cost to maintain the website the link above my not exist. However, the code is readily available.\n\n\nFunctionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
+    "text": "TL;DR\nI used my household energy consumption data to build forecasting models and put the models into production using APIs and docker.\n\n\nAbout\nWhen I worked at Deloitte we were tasked with creating a forecast for sales opportunities. After implementing a forecasting workflow on Databricks, I had an idea. I always have ideas.\nI proposed to my leaders that we refactor the code and architect a new solution. My idea was so modularize and generalize the code, so that it could easily extend to any configuration. By this I mean that eventually it wasn’t just the global CFO that wanted our forecast, but local member firm leaders as well. This project was one our teams biggest hits.\nThe down side to killer projects at work is that there isn’t anything tangible to show for them. So, I decided to replicate the architecture of the Deloitte project and improve it.\nOne thing I’ve noticed over the years is that much of the work data scientists create goes unused. I think this is why the machine-learning-engineer branch of data science formed. It’s not enough to create models. The missing piece was putting the models into production. That’s why in this project production is a key element.\n\n\nData\nI built a data pipeline for my household energy data and corresponding daily weather data. The data is housed in a private AWS S3 bucket.\nSee the post under “Data” called “Household Energy Consumption Data Pipeline” about the data pipeline for more info.\n\n\nPlanning\nAs of Oct 9th, 2024 this project is still in the planning phase because as my late father in-law used to say, before starting any project you should, “sit on your butt and think.”\nFor this project I will create forecasting models in Python and R. Yes, you read that correctly, this is a multilingual project! I am also exploring if Julia has time series forecasting capabilities. I started learning Julia c. 2021 and enjoy using it.\nI will use statistical, machine learning, and deep learning models. In Python, this will be accomplished via the Nixtla suite of packages. In R, I will use fable andmodeltimeviatidymodels`.\nThe challenge I’m thinking through is how to easily split training the models and forecasting. A neat trick that I came up with on the Deloitte project is to store all of the models in a module. This module can be imported into the training and forecasting workflows, respectively. The neat thing about this solution is that it avoids repetition. I also think it’s cleaner this way as everything is centralized.\nAn example project structure could be:\nproject-root\n    - py\n        - src\n            - models\n                - stats.py\n                - ml.py\n                - dl.py\n        - scripts\n            - training\n                - main.py\n            - forecasting\n                - main.py\n        - main.py\nIn this structure the models are modules that the training and forecasting workflows or pipelines leverage.\nThe main module will have a toggle to switch between training and forecasting. As this is a passion project and the forecasts aren’t used for anything, I don’t need to update the models frequently. I think that having main flip between training and forecasting is better than manually executing things. For example, ./py/main.py will import ./py/training/main.py and ./py/forecasting/main.py. Each of the children main files will be mini-control centers for their respective workflows.\nSome thought about production. My goal is to put this work into production, and for that I need a way to interact with the models easily. To accomplish this I want to create a fastAPI for the python forecasts and a plumber API for the R forecasts. I’ll likely package in a container using docker or podman.\nI’ll host the container on a spare desktop I’ve beefed up for these purposes - 16 cores, 64 GB RAM, and a NVIDIA GPU. When there’s new data and I want to obtain the latest forecasts I’ll spin up my spare desktop and ping it.\n\n\nCode\nCurrently, as the work is evolving the project is private. However, the goal is to make the code publicly available.",
+    "crumbs": [
+      "Projects",
+      "Time Series",
+      "Forecasting My Household's Energy Consumption"
+    ]
+  },
+  {
+    "objectID": "posts/projects/web-apps/web-apps.html",
+    "href": "posts/projects/web-apps/web-apps.html",
+    "title": "Web Apps",
+    "section": "",
+    "text": "Overview\n\nA Texas Parks and Wildlife resource, link\nA tool to help create stratified samples, , link",
+    "crumbs": [
+      "Projects",
+      "Web Apps"
+    ]
+  },
+  {
+    "objectID": "posts/projects/web-apps/strat-sampling-tool.html",
+    "href": "posts/projects/web-apps/strat-sampling-tool.html",
+    "title": "Stratified Sampling",
+    "section": "",
+    "text": "About\nDuring my tenure at Consumers Energy, my sibling team was responsible for generating customer contact lists for Marketing teams. Mostly these lists were created via simple random sampling. However, there were some astute stakeholders that wanted to test if stratified sampling would yield more accurate results. Initially, the team accomplished this manually, but it was error-prone and onerous. So, I built a Shiny app for them to automate the task. Below is a replica of that work.\n\nwebapp\ncode",
     "crumbs": [
       "Projects",
       "Web Apps",
-      "Texas Parks & Wildlife"
+      "Stratified Sampling"
     ]
   },
   {
-    "objectID": "posts/projects/web-apps/tpwd.html#technical-details",
-    "href": "posts/projects/web-apps/tpwd.html#technical-details",
-    "title": "Texas Parks & Wildlife",
+    "objectID": "posts/projects/analyses/analyses.html",
+    "href": "posts/projects/analyses/analyses.html",
+    "title": "Analyses",
     "section": "",
-    "text": "Functionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
+    "text": "Overview\n\nAn analysis of languages used to create statistics packages on Arxiv, link\nUsing Julia to analyze router packet data, link",
     "crumbs": [
       "Projects",
-      "Web Apps",
-      "Texas Parks & Wildlife"
+      "Analyses"
     ]
   },
   {
-    "objectID": "posts/projects/analyses/arxiv-stats-pkgs.html",
-    "href": "posts/projects/analyses/arxiv-stats-pkgs.html",
-    "title": "Arxiv Packages Analysis",
+    "objectID": "posts/projects/data/household-energy-pipeline.html",
+    "href": "posts/projects/data/household-energy-pipeline.html",
+    "title": "Household Energy Consumption Data Pipeline",
     "section": "",
-    "text": "About\nAn analysis of Julia, Python, and R packages on the statistics section of Arxiv. The term “R package” had the most results, followed by Python then Julia.\n\nreport\ncode",
+    "text": "Data\nThe smart meters can provide data as granular as 15-minute intervals. As you can imagine the data grows quickly.\nIn addition to the energy data I also work with weather data obtained via a NOAA API.\n\n\nData Pipeline\nMy first attempt at building a data pipeline was built in R and was wonky. I don’t remember when I started this project.\nSometime in Q3 2024 I decided to refactor the data pipeline. I still used R but I completely overhauled the code.\nThe goal of refactoring was to modernize the code, create modules, reproducibility, unit tests, leverage the cloud, and ease of use.\nOne of the main changes was the introduction of the box package.\nUsing box changed how I code in R. Normally, R users are taught to use library(pkg). But this is the antithesis many modern languages because library() imports all the namespaces. Working box makes coding in R like coding in Python or Julia. Since I learned how to use box I haven’t gone back.\nAnother change to how I used to write R code is leveraging base R more. When I learned R in 2014 all I knew was base R. Then over time I leaned more heavily on third-party packages, such as the Tidyverse. But, I’ve grown as a developer. I care much more about reproducibility now. And having tons of dependencies is risky.\nUsing box I created functions within modules and organized the modules by scope. For example, all AWS functions are housed in ./src/AWS.\nAnother sign of my maturity as a [statistical] programmer is testing. In R this done via the testthat package. I now test all of my functions. I do this even for analyses. How else can my work be trusted?\nThe data itself also received a face-lift. I updated how the data is stored. I now use Arrow, e.g., energy.arrow. And where the data is stored also changed. The data is exported locally and in the cloud. The data in the cloud is stored in a private AWS S3 bucket. The local files are backups.\nFinally, I used the R package docopt to create command line arguments. This makes executing the pipeline a breeze. For example, first I download the latest data from the website. I save the file in ./data/input. In the terminal I execute Rscript main.R --help if I forget which flags exist. To run the code: Rscript main.R -t -e -w. Where -t executes the tests. This ensures everything is up to snuff. The -e executes the energy pipeline. And the -w executes the weather pipeline.\nI recently found out a package called targets that is designed for pipelines. I may explore this in the future.\nOverall, I’m very happy with the refactoring.\n\n\nCode\nCurrently the code is private. If and when this changes I’ll update this page with a link to the repo.",
     "crumbs": [
       "Projects",
-      "Analyses",
-      "Arxiv Packages Analysis"
+      "Data",
+      "Household Energy Consumption Data Pipeline"
     ]
   },
   {
-    "objectID": "posts/projects/analyses/internet-outage.html",
-    "href": "posts/projects/analyses/internet-outage.html",
-    "title": "Internet Outage Detection",
+    "objectID": "posts/projects/stats/hypothesis-testing-primer.html",
+    "href": "posts/projects/stats/hypothesis-testing-primer.html",
+    "title": "A Primer on Hypothesis Testing",
     "section": "",
-    "text": "About\nYears ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.\n\nreport",
+    "text": "Hypothesis testing\nDuring my tenure at Consumers Energy I was asked to help introduce the notion of testing. The focus was on marketing programs. This was a new-ish department and there were lots of opportunities.\nMy main focus was to build relationships with stakeholders and gently educate them about testing. Below is an example of some of the concepts and tools I used.\n\nreport",
     "crumbs": [
       "Projects",
-      "Analyses",
-      "Internet Outage Detection"
+      "Stats",
+      "A Primer on Hypothesis Testing"
     ]
   },
   {
-    "objectID": "posts/projects/stats/stats.html",
-    "href": "posts/projects/stats/stats.html",
-    "title": "Statistics",
+    "objectID": "posts/projects/tools/mult-lang-proj-template.html",
+    "href": "posts/projects/tools/mult-lang-proj-template.html",
+    "title": "A Language agnostic project template",
     "section": "",
-    "text": "Overview\n\nA primer on hypothesis testing, link",
+    "text": "About\nI present a handy shell script to automate and standardize data analysis project structures. Yes, several language-specific templates exist, but using them assumes the language for the project has already been chosen. Often when planning a project, I don’t select a language until later in the planning stage. Also, much of a project’s structure is language-agnostic so there’s no need to wait to lay the foundation.\n\ncode",
     "crumbs": [
       "Projects",
-      "Stats"
-    ]
-  },
-  {
-    "objectID": "posts/projects/tools/tools.html",
-    "href": "posts/projects/tools/tools.html",
-    "title": "Tools",
-    "section": "",
-    "text": "Overview\n\nA shell script that creates data analysis project templates, link",
-    "crumbs": [
-      "Projects",
-      "Tools"
-    ]
-  },
-  {
-    "objectID": "posts/viz/viz.html",
-    "href": "posts/viz/viz.html",
-    "title": "Visualizations",
-    "section": "",
-    "text": "Overview\n\nA dashboard to track my job search in 2024, link",
-    "crumbs": [
-      "Projects",
-      "Visualizations"
-    ]
-  },
-  {
-    "objectID": "posts/talks/r-in-energy.html",
-    "href": "posts/talks/r-in-energy.html",
-    "title": "R in Energy",
-    "section": "",
-    "text": "About\nSome time ago I had the great pleasure to share some of my work on functional data analysis.\nThe R in Energy meetup is a industry-focused data meetup for professionals working with R in the energy sector/ utilities industry. The meetups are hosted by Posit.\n\n\nLinks\n\nYouTube\nPresentation\n\n\n\nEmbedded\n\n\n\n\nR in Energy",
-    "crumbs": [
-      "Talks",
-      "R in Energy"
-    ]
-  },
-  {
-    "objectID": "posts/blogs/fda.html",
-    "href": "posts/blogs/fda.html",
-    "title": "Functional Data Analysis",
-    "section": "",
-    "text": "About\nSince first learning about splines c.2020 I have been fascinated with functional data analysis (FDA).\nOver the years I’ve explored applications of FDA at work and for personal projects. I created this blog to collect these works and house them under one roof. The blog also provides me an avenue to share thoughts about the work that might not fit into the work itself, such as how the document was created, why I used certain software, etc.\nThe blog can be accessed here.",
-    "crumbs": [
-      "Blogs",
-      "Functional Data Analysis"
-    ]
-  },
-  {
-    "objectID": "posts/blogs/blogs.html",
-    "href": "posts/blogs/blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "I enjoy writing. But I don’t enjoy paywalls. So, I write on open platforms, such as GitHub Pages or Quarto Pubs.\nIn this section you’ll find collections of writings. Enjoy!",
-    "crumbs": [
-      "Blogs"
-    ]
-  },
-  {
-    "objectID": "posts/talks/talks.html",
-    "href": "posts/talks/talks.html",
-    "title": "Talks",
-    "section": "",
-    "text": "In this section you’ll find speaking engagements. While there aren’t many, it’s something I wish to more of.",
-    "crumbs": [
-      "Talks"
+      "Tools",
+      "A Language agnostic project template"
     ]
   },
   {
@@ -167,7 +126,7 @@
     "href": "posts/viz/job-search-dashboard.html#software",
     "title": "A Job Search Tracker",
     "section": "1. Software",
-    "text": "1. Software\nThe elements of the dashboard were created using Python 3.10.\nThe HTML output was created with Quarto - installation. Install the latest version as Qurto dashboards require a minimum version (1.4 I think).",
+    "text": "1. Software\nThe elements of the dashboard were created using Python 3.10.\nThe HTML output was created with Quarto - installation. Install the latest version as Quarto dashboards require a minimum version (1.4 I think).",
     "crumbs": [
       "Projects",
       "Visualizations",
@@ -215,7 +174,7 @@
     "href": "posts/viz/job-search-dashboard.html#quarto",
     "title": "A Job Search Tracker",
     "section": "4. Quarto",
-    "text": "4. Quarto\n\n_quarto.yml\n_quarto.yml is the control center of the Quarto project.\nHere is an example of a basic file. Customization is a bit outside our purposes. I encourage you to review thh Quarto docs.\nproject:\n  type: website\n  output-dir: public\n\nwebsite:\n  title: \"My Jobs Dashboard\"\n  site-url: \"\"\n  search: false\n  page-footer: \n    background: dark \n    right: Built with Quarto\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n\n\nHosting/ Publishing or GitHub vs GitLab\nThe dashboard can be published on either GitHub or Gitlab. GitHub is a little easier and the Quarto docs illustrate how to publish on GitHub.\nI rendered this dashboard on GitLab because I’ve never done that before and I wanted to learn how.\nThe _quarto.yml specifies where to render the dashboard. Notice the output-dir under project.\n\non GitLab Pages the output dir is ./public\non GitHub Pages the output dir is ./docs\n\nUpdate output-dir accordingly.\nOne last note on GitLab Pages. GitLab uses runners to publish the dashboard, while GitHub has a GUI option.\nTo use GitLab you need a file named .gitlab-ci.yml. Contents below.\nimage: alpine:latest\n\nstages:\n- test\n- deploy\n\nsast:\n  stage: test\ninclude:\n- template: Security/SAST.gitlab-ci.yml\n\npages:\n  stage: deploy\n  script:\n    - echo \"Deploying GitLab Pages from the public directory\"\n  artifacts:\n    paths:\n      - public \n  only:\n    - main\n\n\nRendering\nAssuming you installed Quarto, let’s render the output.\nIn the terminal, type either:\n\nquarto render - generates output in the specified directory\nquarto preview - reactive programming so that changes are rendered live\n\nPreview is helpful if you’re actively working on stuff. When you preview the dashboard will open in a browser.\nWhile render only produces output. To view the output go to ./public/index.html on GitLab or ./docs/index.html on GitHub.",
+    "text": "4. Quarto\n\n_quarto.yml\n_quarto.yml is the control center of the Quarto project.\nHere is an example of a basic file. Customization is a bit outside our purposes. I encourage you to review the Quarto docs.\nproject:\n  type: website\n  output-dir: public\n\nwebsite:\n  title: \"My Jobs Dashboard\"\n  site-url: \"\"\n  search: false\n  page-footer: \n    background: dark \n    right: Built with Quarto\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n\n\nHosting/ Publishing or GitHub vs GitLab\nThe dashboard can be published on either GitHub or GitLab. GitHub is a little easier and the Quarto docs illustrate how to publish on GitHub.\nI rendered this dashboard on GitLab because I’ve never done that before and I wanted to learn how.\nThe _quarto.yml specifies where to render the dashboard. Notice the output-dir under project.\n\non GitLab Pages the output dir is ./public\non GitHub Pages the output dir is ./docs\n\nUpdate output-dir accordingly.\nOne last note on GitLab Pages. GitLab uses runners to publish the dashboard, while GitHub has a GUI option.\nTo use GitLab you need a file named .gitlab-ci.yml. Contents below.\nimage: alpine:latest\n\nstages:\n- test\n- deploy\n\nsast:\n  stage: test\ninclude:\n- template: Security/SAST.gitlab-ci.yml\n\npages:\n  stage: deploy\n  script:\n    - echo \"Deploying GitLab Pages from the public directory\"\n  artifacts:\n    paths:\n      - public \n  only:\n    - main\n\n\nRendering\nAssuming you installed Quarto, let’s render the output.\nIn the terminal, type either:\n\nquarto render - generates output in the specified directory\nquarto preview - reactive programming so that changes are rendered live\n\nPreview is helpful if you’re actively working on stuff. When you preview the dashboard will open in a browser.\nWhile render only produces output. To view the output go to ./public/index.html on GitLab or ./docs/index.html on GitHub.",
     "crumbs": [
       "Projects",
       "Visualizations",
@@ -223,61 +182,148 @@
     ]
   },
   {
-    "objectID": "posts/projects/tools/mult-lang-proj-template.html",
-    "href": "posts/projects/tools/mult-lang-proj-template.html",
-    "title": "A Language agnostic project template",
+    "objectID": "posts/talks/talks.html",
+    "href": "posts/talks/talks.html",
+    "title": "Talks",
     "section": "",
-    "text": "About\nI present a handy shell script to automate and standardize data analysis project structures. Yes, several language-specific templates exist, but using them assumes the language for the project has already been chosen. Often when planning a project, I don’t select a language until later in the planning stage. Also, much of a project’s structure is language-agnostic so there’s no need to wait to lay the foundation.\n\ncode",
+    "text": "In this section you’ll find speaking engagements. While there aren’t many, it’s something I wish to more of.",
     "crumbs": [
-      "Projects",
-      "Tools",
-      "A Language agnostic project template"
+      "Talks"
     ]
   },
   {
-    "objectID": "posts/projects/stats/hypothesis-testing-primer.html",
-    "href": "posts/projects/stats/hypothesis-testing-primer.html",
-    "title": "A Primer on Hypothesis Testing",
+    "objectID": "posts/blogs/blogs.html",
+    "href": "posts/blogs/blogs.html",
+    "title": "Blogs",
     "section": "",
-    "text": "Hypothesis testing\nDuring my tenure at Consumers Energy I was asked to help introduce the notion of testing. The focus was on marketing programs. This was a new-ish department and there were lots of opportunities.\nMy main focus was to build relationships with stakeholders and gently educate them about testing. Below is an example of some of the concepts and tools I used.\n\nreport",
+    "text": "I enjoy writing. But I don’t enjoy paywalls. So, I write on open platforms, such as GitHub Pages or Quarto Pubs.\nIn this section you’ll find collections of writings. Enjoy!",
     "crumbs": [
-      "Projects",
-      "Stats",
-      "A Primer on Hypothesis Testing"
+      "Blogs"
     ]
   },
   {
-    "objectID": "posts/projects/analyses/analyses.html",
-    "href": "posts/projects/analyses/analyses.html",
-    "title": "Analyses",
+    "objectID": "posts/blogs/fda.html",
+    "href": "posts/blogs/fda.html",
+    "title": "Functional Data Analysis",
     "section": "",
-    "text": "Overview\n\nAn analysis of languages used to create statistics packages on Arxiv, link\nUsing Julia to analyze router packet data, link",
+    "text": "About\nSince first learning about splines c.2020 I have been fascinated with functional data analysis (FDA).\nOver the years I’ve explored applications of FDA at work and for personal projects. I created this blog to collect these works and house them under one roof. The blog also provides me an avenue to share thoughts about the work that might not fit into the work itself, such as how the document was created, why I used certain software, etc.\nThe blog can be accessed here.",
     "crumbs": [
-      "Projects",
-      "Analyses"
+      "Blogs",
+      "Functional Data Analysis"
     ]
   },
   {
-    "objectID": "posts/projects/web-apps/strat-sampling-tool.html",
-    "href": "posts/projects/web-apps/strat-sampling-tool.html",
-    "title": "Stratified Sampling",
+    "objectID": "posts/talks/r-in-energy.html",
+    "href": "posts/talks/r-in-energy.html",
+    "title": "R in Energy",
     "section": "",
-    "text": "About\nDuring my tenure at Consumers Energy, my sibling team was responsible for generating customer contact lists for Marketing teams. Mostly these lists were created via simple random sampling. However, there were some astute stakeholders that wanted to test if stratified sampling would yield more accurate results. Initially, the team accomplished this manually, but it was error-prone and onerous. So, I built a Shiny app for them to automate the task. Below is a replica of that work.\n\nwebapp\ncode",
+    "text": "About\nSome time ago I had the great pleasure to share some of my work on functional data analysis.\nThe R in Energy meetup is a industry-focused data meetup for professionals working with R in the energy sector/ utilities industry. The meetups are hosted by Posit.\n\n\nLinks\n\nYouTube\nPresentation\n\n\n\nEmbedded\n\n\n\n\nR in Energy",
+    "crumbs": [
+      "Talks",
+      "R in Energy"
+    ]
+  },
+  {
+    "objectID": "posts/viz/viz.html",
+    "href": "posts/viz/viz.html",
+    "title": "Visualizations",
+    "section": "",
+    "text": "Overview\n\nA dashboard to track my job search in 2024, link",
+    "crumbs": [
+      "Projects",
+      "Visualizations"
+    ]
+  },
+  {
+    "objectID": "posts/projects/tools/tools.html",
+    "href": "posts/projects/tools/tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "Overview\n\nA shell script that creates data analysis project templates, link",
+    "crumbs": [
+      "Projects",
+      "Tools"
+    ]
+  },
+  {
+    "objectID": "posts/projects/stats/stats.html",
+    "href": "posts/projects/stats/stats.html",
+    "title": "Statistics",
+    "section": "",
+    "text": "Overview\n\nA primer on hypothesis testing, link",
+    "crumbs": [
+      "Projects",
+      "Stats"
+    ]
+  },
+  {
+    "objectID": "posts/projects/data/data.html",
+    "href": "posts/projects/data/data.html",
+    "title": "Data",
+    "section": "",
+    "text": "About\nThis section describes data engineering projects.\nWhile I have mostly focused on data science work, I have done plenty of data wrangling. Since I love to learn I’ve often volunteered to assist the data engineers when they’ve asked for extra help.\n\nA data pipeline for projects using my household energy consumption, link",
+    "crumbs": [
+      "Projects",
+      "Data"
+    ]
+  },
+  {
+    "objectID": "posts/projects/analyses/internet-outage.html",
+    "href": "posts/projects/analyses/internet-outage.html",
+    "title": "Internet Outage Detection",
+    "section": "",
+    "text": "About\nYears ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.\n\nreport",
+    "crumbs": [
+      "Projects",
+      "Analyses",
+      "Internet Outage Detection"
+    ]
+  },
+  {
+    "objectID": "posts/projects/analyses/arxiv-stats-pkgs.html",
+    "href": "posts/projects/analyses/arxiv-stats-pkgs.html",
+    "title": "Arxiv Packages Analysis",
+    "section": "",
+    "text": "About\nAn analysis of Julia, Python, and R packages on the statistics section of Arxiv. The term “R package” had the most results, followed by Python then Julia.\n\nreport\ncode",
+    "crumbs": [
+      "Projects",
+      "Analyses",
+      "Arxiv Packages Analysis"
+    ]
+  },
+  {
+    "objectID": "posts/projects/web-apps/tpwd.html",
+    "href": "posts/projects/web-apps/tpwd.html",
+    "title": "Texas Parks & Wildlife",
+    "section": "",
+    "text": "Years ago when I moved to Texas from South Florida I missed going fishing. I discovered that during winter months, Texas Parks & Wildlife (TPWD) stocks local fishing areas with trout. This was music to my ears. However, the static HTML table provided by TPWD wasn’t conducive to getting outdoors. The problem with the static table is it only provides the fishing area and the city, and it’s too tedious to search each location individually on Google Maps for example. So, I built a Shiny app for myself and hosted it on ShinyApps.io (link). The app was successful and I was able to go fishing. The main goal of this version was to help me find the nearest fishing location and to be able to sort and filter locations.\nRecently, I decided to learn more about putting a Shiny app in production. I decided to focus on the TPWD trout POC I built years ago because I thought others could benefit from having a better interface to the trout stocking data. The scope of the app expanded beyond just the trout stocking data though as I realized that other TPWD resources were useful but not interactive. The static nature of the resources might deter some people from getting outdoors. So, I built this Shiny app.\nThe goal of this app is to help Texans interact with Texas Parks & Wildlife static online resources and to help Texans get outdoors.\n\nweb app code\ndata layer code\nwebsite\nShiny contest 2024\n\nThe web app is hosted on AWS using their free tier. Once the 12-months free expires, depending on the cost to maintain the website the link above my not exist. However, the code is readily available.\n\n\nFunctionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
     "crumbs": [
       "Projects",
       "Web Apps",
-      "Stratified Sampling"
+      "Texas Parks & Wildlife"
     ]
   },
   {
-    "objectID": "posts/projects/web-apps/web-apps.html",
-    "href": "posts/projects/web-apps/web-apps.html",
-    "title": "Web Apps",
+    "objectID": "posts/projects/web-apps/tpwd.html#technical-details",
+    "href": "posts/projects/web-apps/tpwd.html#technical-details",
+    "title": "Texas Parks & Wildlife",
     "section": "",
-    "text": "Overview\n\nA Texas Parks and Wildlife resource, link\nA tool to help create stratified samples, , link",
+    "text": "Functionality:\n\nInteractive tables\nCalculate drive time and distance\n\nTables:\n\nBoat ramps\nCatfish stocking information\nParks (list of state parks)\nTrout stocking information (new season begins in November)\nWildlife management areas\n\nHosting:\n\nAWS EC2 (free tier t2.micro)\n\nSoftware:\n\nShiny (R) built with the Rhino development framework\nHERE API for route calculation logic\nDocker",
     "crumbs": [
       "Projects",
-      "Web Apps"
+      "Web Apps",
+      "Texas Parks & Wildlife"
+    ]
+  },
+  {
+    "objectID": "posts/projects/time-series/time-series.html",
+    "href": "posts/projects/time-series/time-series.html",
+    "title": "Time Series",
+    "section": "",
+    "text": "About\nThroughout my time as a data scientist I’ve been tasked with forecasting projects. While it’s fun to talk about these projects, I can’t share any output or code.\nThe projects below are passion projects to illustrate my knowledge and capabilities.\n\nForecasting my household’s energy consumption, link",
+    "crumbs": [
+      "Projects",
+      "Time Series"
     ]
   },
   {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Internet Outage Detection – Santiago Rodriguez</title>
+<title>Forecasting My Household’s Energy Consumption – Santiago Rodriguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/analyses.html">Analyses</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/internet-outage.html">Internet Outage Detection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/time-series/time-series.html">Time Series</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/time-series/household-forecasting.html">Forecasting My Household’s Energy Consumption</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,11 +178,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../posts/projects/analyses/analyses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyses</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../posts/projects/analyses/arxiv-stats-pkgs.html" class="sidebar-item-text sidebar-link">
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Internet Outage Detection</span></a>
   </div>
 </li>
@@ -235,14 +235,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../posts/projects/time-series/time-series.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Time Series</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/projects/time-series/household-forecasting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/time-series/household-forecasting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Forecasting My Household’s Energy Consumption</span></a>
   </div>
 </li>
@@ -351,16 +351,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">TL;DR</a></li>
+  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#planning" id="toc-planning" class="nav-link" data-scroll-target="#planning">Planning</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/analyses.html">Analyses</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/internet-outage.html">Internet Outage Detection</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/time-series/time-series.html">Time Series</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/time-series/household-forecasting.html">Forecasting My Household’s Energy Consumption</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Internet Outage Detection</h1>
+<h1 class="title">Forecasting My Household’s Energy Consumption</h1>
 </div>
 
 
@@ -377,16 +381,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="tldr" class="level1">
+<h1>TL;DR</h1>
+<p>I used my household energy consumption data to build forecasting models and put the models into production using APIs and docker.</p>
+</section>
 <section id="about" class="level1">
 <h1>About</h1>
-<p>Years ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.</p>
-<ul>
-<li><a href="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/">report</a></li>
-</ul>
-<div class="{=html}">
-<iframe src="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/" width="100%" height="700px">
-</iframe>
-</div>
+<p>When I worked at Deloitte we were tasked with creating a forecast for sales opportunities. After implementing a forecasting workflow on Databricks, I had an idea. I always have ideas.</p>
+<p>I proposed to my leaders that we refactor the code and architect a new solution. My idea was so modularize and generalize the code, so that it could easily extend to any configuration. By this I mean that eventually it wasn’t just the global CFO that wanted our forecast, but local member firm leaders as well. This project was one our teams biggest hits.</p>
+<p>The down side to killer projects at work is that there isn’t anything tangible to show for them. So, I decided to replicate the architecture of the Deloitte project and improve it.</p>
+<p>One thing I’ve noticed over the years is that much of the work data scientists create goes unused. I think this is why the machine-learning-engineer branch of data science formed. It’s not enough to create models. The missing piece was putting the models into production. That’s why in this project production is a key element.</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>I built a data pipeline for my household energy data and corresponding daily weather data. The data is housed in a private AWS S3 bucket.</p>
+<p>See the post under “Data” called “Household Energy Consumption Data Pipeline” about the data pipeline for more info.</p>
+</section>
+<section id="planning" class="level1">
+<h1>Planning</h1>
+<p>As of Oct 9th, 2024 this project is still in the planning phase because as my late father in-law used to say, before starting any project you should, “sit on your butt and think.”</p>
+<p>For this project I will create forecasting models in Python and R. <strong>Yes</strong>, you read that correctly, this is a multilingual project! I am also exploring if Julia has time series forecasting capabilities. I started learning Julia c.&nbsp;2021 and enjoy using it.</p>
+<p>I will use statistical, machine learning, and deep learning models. In Python, this will be accomplished via the <code>Nixtla</code> suite of packages. In R, I will use <code>fable and</code>modeltime<code>via</code>tidymodels`.</p>
+<p>The challenge I’m thinking through is how to easily split training the models and forecasting. A neat trick that I came up with on the Deloitte project is to store all of the models in a module. This module can be imported into the training and forecasting workflows, respectively. The neat thing about this solution is that it avoids repetition. I also think it’s cleaner this way as everything is centralized.</p>
+<p>An example project structure could be:</p>
+<pre><code>project-root
+    - py
+        - src
+            - models
+                - stats.py
+                - ml.py
+                - dl.py
+        - scripts
+            - training
+                - main.py
+            - forecasting
+                - main.py
+        - main.py</code></pre>
+<p>In this structure the models are modules that the training and forecasting workflows or pipelines leverage.</p>
+<p>The <code>main</code> module will have a toggle to switch between training and forecasting. As this is a passion project and the forecasts aren’t used for anything, I don’t need to update the models frequently. I think that having main flip between training and forecasting is better than manually executing things. For example, <code>./py/main.py</code> will import <code>./py/training/main.py</code> and <code>./py/forecasting/main.py</code>. Each of the children main files will be mini-control centers for their respective workflows.</p>
+<p>Some thought about production. My goal is to put this work into production, and for that I need a way to interact with the models easily. To accomplish this I want to create a <code>fastAPI</code> for the python forecasts and a <code>plumber</code> API for the R forecasts. I’ll likely package in a container using <code>docker</code> or <code>podman</code>.</p>
+<p>I’ll host the container on a spare desktop I’ve beefed up for these purposes - 16 cores, 64 GB RAM, and a NVIDIA GPU. When there’s new data and I want to obtain the latest forecasts I’ll spin up my spare desktop and ping it.</p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<p>Currently, as the work is evolving the project is private. However, the goal is to make the code publicly available.</p>
 
 
 </section>

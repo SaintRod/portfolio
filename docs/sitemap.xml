@@ -2,83 +2,95 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://saintrod.github.io/portfolio/index.html</loc>
-    <lastmod>2024-10-09T20:48:43.504Z</lastmod>
+    <lastmod>2024-10-09T23:51:13.467Z</lastmod>
   </url>
   <url>
     <loc>https://saintrod.github.io/portfolio/posts/other/study-guides.html</loc>
-    <lastmod>2024-10-04T01:03:32.424Z</lastmod>
+    <lastmod>2024-10-09T23:49:48.746Z</lastmod>
   </url>
   <url>
     <loc>https://saintrod.github.io/portfolio/posts/projects/projects.html</loc>
     <lastmod>2024-10-04T08:52:02.570Z</lastmod>
   </url>
   <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/time-series/time-series.html</loc>
-    <lastmod>2024-10-02T17:08:34.943Z</lastmod>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/time-series/household-forecasting.html</loc>
+    <lastmod>2024-10-09T23:49:42.082Z</lastmod>
   </url>
   <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/web-apps/tpwd.html</loc>
-    <lastmod>2024-10-04T22:03:30.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/analyses/arxiv-stats-pkgs.html</loc>
-    <lastmod>2024-10-04T21:56:46.655Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/analyses/internet-outage.html</loc>
-    <lastmod>2024-10-04T21:56:52.311Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/stats/stats.html</loc>
-    <lastmod>2024-10-04T22:16:34.300Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/tools/tools.html</loc>
-    <lastmod>2024-10-04T22:01:25.265Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/viz/viz.html</loc>
-    <lastmod>2024-10-04T22:14:26.675Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/talks/r-in-energy.html</loc>
-    <lastmod>2024-10-03T09:27:21.498Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/blogs/fda.html</loc>
-    <lastmod>2024-10-02T10:45:28.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/blogs/blogs.html</loc>
-    <lastmod>2024-10-02T14:25:30.420Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/talks/talks.html</loc>
-    <lastmod>2024-10-02T14:40:42.703Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/viz/job-search-dashboard.html</loc>
-    <lastmod>2024-10-09T22:07:41.493Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/tools/mult-lang-proj-template.html</loc>
-    <lastmod>2024-10-04T22:01:22.449Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/stats/hypothesis-testing-primer.html</loc>
-    <lastmod>2024-10-04T21:52:52.637Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/analyses/analyses.html</loc>
-    <lastmod>2024-10-04T22:07:39.076Z</lastmod>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/web-apps/web-apps.html</loc>
+    <lastmod>2024-10-04T22:05:37.663Z</lastmod>
   </url>
   <url>
     <loc>https://saintrod.github.io/portfolio/posts/projects/web-apps/strat-sampling-tool.html</loc>
     <lastmod>2024-10-04T22:04:41.514Z</lastmod>
   </url>
   <url>
-    <loc>https://saintrod.github.io/portfolio/posts/projects/web-apps/web-apps.html</loc>
-    <lastmod>2024-10-04T22:05:37.663Z</lastmod>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/analyses/analyses.html</loc>
+    <lastmod>2024-10-04T22:07:39.076Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/data/household-energy-pipeline.html</loc>
+    <lastmod>2024-10-09T23:48:29.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/stats/hypothesis-testing-primer.html</loc>
+    <lastmod>2024-10-04T21:52:52.637Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/tools/mult-lang-proj-template.html</loc>
+    <lastmod>2024-10-04T22:01:22.449Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/viz/job-search-dashboard.html</loc>
+    <lastmod>2024-10-09T23:51:06.747Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/talks/talks.html</loc>
+    <lastmod>2024-10-02T14:40:42.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/blogs/blogs.html</loc>
+    <lastmod>2024-10-02T14:25:30.420Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/blogs/fda.html</loc>
+    <lastmod>2024-10-02T10:45:28.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/talks/r-in-energy.html</loc>
+    <lastmod>2024-10-03T09:27:21.498Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/viz/viz.html</loc>
+    <lastmod>2024-10-04T22:14:26.675Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/tools/tools.html</loc>
+    <lastmod>2024-10-04T22:01:25.265Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/stats/stats.html</loc>
+    <lastmod>2024-10-04T22:16:34.300Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/data/data.html</loc>
+    <lastmod>2024-10-09T23:04:03.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/analyses/internet-outage.html</loc>
+    <lastmod>2024-10-04T21:56:52.311Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/analyses/arxiv-stats-pkgs.html</loc>
+    <lastmod>2024-10-04T21:56:46.655Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/web-apps/tpwd.html</loc>
+    <lastmod>2024-10-04T22:03:30.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saintrod.github.io/portfolio/posts/projects/time-series/time-series.html</loc>
+    <lastmod>2024-10-09T22:35:03.852Z</lastmod>
   </url>
   <url>
     <loc>https://saintrod.github.io/portfolio/posts/projects/ml/ml.html</loc>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Internet Outage Detection – Santiago Rodriguez</title>
+<title>Household Energy Consumption Data Pipeline – Santiago Rodriguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/analyses.html">Analyses</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/internet-outage.html">Internet Outage Detection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/data/data.html">Data</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/data/household-energy-pipeline.html">Household Energy Consumption Data Pipeline</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,11 +178,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../posts/projects/analyses/analyses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyses</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../posts/projects/analyses/arxiv-stats-pkgs.html" class="sidebar-item-text sidebar-link">
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Internet Outage Detection</span></a>
   </div>
 </li>
@@ -201,14 +201,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../posts/projects/data/data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/projects/data/household-energy-pipeline.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/data/household-energy-pipeline.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Household Energy Consumption Data Pipeline</span></a>
   </div>
 </li>
@@ -351,16 +351,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link" data-scroll-target="#data-pipeline">Data Pipeline</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/analyses.html">Analyses</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/internet-outage.html">Internet Outage Detection</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/data/data.html">Data</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/data/household-energy-pipeline.html">Household Energy Consumption Data Pipeline</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Internet Outage Detection</h1>
+<h1 class="title">Household Energy Consumption Data Pipeline</h1>
 </div>
 
 
@@ -377,16 +379,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about" class="level1">
-<h1>About</h1>
-<p>Years ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.</p>
-<ul>
-<li><a href="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/">report</a></li>
-</ul>
-<div class="{=html}">
-<iframe src="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/" width="100%" height="700px">
-</iframe>
-</div>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>The smart meters can provide data as granular as 15-minute intervals. As you can imagine the data grows quickly.</p>
+<p>In addition to the energy data I also work with weather data obtained via a NOAA API.</p>
+</section>
+<section id="data-pipeline" class="level1">
+<h1>Data Pipeline</h1>
+<p>My first attempt at building a data pipeline was built in R and was wonky. I don’t remember when I started this project.</p>
+<p>Sometime in Q3 2024 I decided to refactor the data pipeline. I still used R but I completely overhauled the code.</p>
+<p>The goal of refactoring was to modernize the code, create modules, reproducibility, unit tests, leverage the cloud, and ease of use.</p>
+<p>One of the main changes was the introduction of the <a href="https://github.com/klmr/box">box</a> package.</p>
+<p>Using <code>box</code> changed how I code in R. Normally, R users are taught to use <code>library(pkg)</code>. But this is the antithesis many modern languages because <code>library()</code> imports all the namespaces. Working box makes coding in R like coding in Python or Julia. Since I learned how to use box I haven’t gone back.</p>
+<p>Another change to how I used to write R code is leveraging base R more. When I learned R in 2014 all I knew was base R. Then over time I leaned more heavily on third-party packages, such as the Tidyverse. But, I’ve grown as a developer. I care much more about reproducibility now. And having tons of dependencies is risky.</p>
+<p>Using box I created functions within modules and organized the modules by scope. For example, all AWS functions are housed in ./src/AWS.</p>
+<p>Another sign of my maturity as a [statistical] programmer is testing. In R this done via the <code>testthat</code> package. I now test all of my functions. I do this even for analyses. How else can my work be trusted?</p>
+<p>The data itself also received a face-lift. I updated how the data is stored. I now use <code>Arrow</code>, e.g., <code>energy.arrow</code>. And where the data is stored also changed. The data is exported locally and in the cloud. The data in the cloud is stored in a private AWS S3 bucket. The local files are backups.</p>
+<p>Finally, I used the R package <code>docopt</code> to create command line arguments. This makes executing the pipeline a breeze. For example, first I download the latest data from the website. I save the file in <code>./data/input</code>. In the terminal I execute <code>Rscript main.R --help</code> if I forget which flags exist. To run the code: <code>Rscript main.R -t -e -w</code>. Where <code>-t</code> executes the tests. This ensures everything is up to snuff. The <code>-e</code> executes the energy pipeline. And the <code>-w</code> executes the weather pipeline.</p>
+<p>I recently found out a package called <a href="https://docs.ropensci.org/targets/">targets</a> that is designed for pipelines. I may explore this in the future.</p>
+<p>Overall, I’m very happy with the refactoring.</p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<p>Currently the code is private. If and when this changes I’ll update this page with a link to the repo.</p>
 
 
 </section>

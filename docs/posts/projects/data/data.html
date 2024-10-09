@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Internet Outage Detection – Santiago Rodriguez</title>
+<title>Data – Santiago Rodriguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/analyses.html">Analyses</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/internet-outage.html">Internet Outage Detection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/data/data.html">Data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,11 +178,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../posts/projects/analyses/analyses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyses</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../posts/projects/analyses/arxiv-stats-pkgs.html" class="sidebar-item-text sidebar-link">
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Internet Outage Detection</span></a>
   </div>
 </li>
@@ -199,13 +199,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../posts/projects/data/data.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/data/data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../posts/projects/data/household-energy-pipeline.html" class="sidebar-item-text sidebar-link">
@@ -358,9 +358,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/analyses.html">Analyses</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/analyses/internet-outage.html">Internet Outage Detection</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/projects/projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../posts/projects/data/data.html">Data</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Internet Outage Detection</h1>
+<h1 class="title">Data</h1>
 </div>
 
 
@@ -379,14 +379,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="about" class="level1">
 <h1>About</h1>
-<p>Years ago I had a faulty internet router. The problem was I didn’t know it was the router yet. Eventually I set up a shell script to ping the router and log results. I analyzed the results and discovered that the router was the issue. I replaced the router with a Gryphon router - if you haven’t heard of it, I highly recommend it. Additionally, this was my first foray into the work of programming with Julia.</p>
+<p>This section describes data engineering projects.</p>
+<p>While I have mostly focused on data science work, I have done plenty of data wrangling. Since I love to learn I’ve often volunteered to assist the data engineers when they’ve asked for extra help.</p>
 <ul>
-<li><a href="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/">report</a></li>
+<li>A data pipeline for projects using my household energy consumption, <a href="../../../posts/projects/data/household-energy-pipeline.html">link</a></li>
 </ul>
-<div class="{=html}">
-<iframe src="https://kaladin-stormblessed.quarto.pub/internet-outage-detection/" width="100%" height="700px">
-</iframe>
-</div>
 
 
 </section>
