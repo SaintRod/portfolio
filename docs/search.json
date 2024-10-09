@@ -155,7 +155,67 @@
     "href": "posts/viz/job-search-dashboard.html",
     "title": "A Job Search Tracker",
     "section": "",
-    "text": "About\nIn August my spouse and I welcomed a tiny human into our lives. Life was good. And then while I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go.\nThis dashboard was created to track my job search post Deloitte. However, anyone can use the dashboard as the code is open-source. The repo README provides instructions on how to do this.\n\ncode\ndashboard\n\n\n\nSoftware\n\nPython\nQuarto",
+    "text": "In August my spouse and I welcomed a tiny human into our lives. Life was good. Then when I returned from parental leave I was informed that my team at Deloitte, about 20 people, would be let go.\nThis dashboard was created to track my job search post Deloitte. However, anyone can use the dashboard as the code is publicly available. The repo README provides instructions on how to do this. However, see below for a brief how-to.\n\ncode\ndashboard",
+    "crumbs": [
+      "Projects",
+      "Visualizations",
+      "A Job Search Tracker"
+    ]
+  },
+  {
+    "objectID": "posts/viz/job-search-dashboard.html#software",
+    "href": "posts/viz/job-search-dashboard.html#software",
+    "title": "A Job Search Tracker",
+    "section": "1. Software",
+    "text": "1. Software\nThe elements of the dashboard were created using Python 3.10.\nThe HTML output was created with Quarto - installation. Install the latest version as Qurto dashboards require a minimum version (1.4 I think).",
+    "crumbs": [
+      "Projects",
+      "Visualizations",
+      "A Job Search Tracker"
+    ]
+  },
+  {
+    "objectID": "posts/viz/job-search-dashboard.html#plot-backgrounds",
+    "href": "posts/viz/job-search-dashboard.html#plot-backgrounds",
+    "title": "A Job Search Tracker",
+    "section": "2. Plot backgrounds",
+    "text": "2. Plot backgrounds\nTo recreate the fun plot you will need two images:\n\nplot-background.png\nplot-point.png\n\nEnsure that the files are named exactly as the ones above.",
+    "crumbs": [
+      "Projects",
+      "Visualizations",
+      "A Job Search Tracker"
+    ]
+  },
+  {
+    "objectID": "posts/viz/job-search-dashboard.html#data",
+    "href": "posts/viz/job-search-dashboard.html#data",
+    "title": "A Job Search Tracker",
+    "section": "3. Data",
+    "text": "3. Data\n\nThe dashboard requires a CSV file saved in ./data/input\n\nYou can name the file whatever you want\nFor this example, let’s pretend the file is named elliott.csv\n\nThe file must contain the following columns\n\nThe data types are in the repo README\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndate\ncompany\nrole\nonsite\nhybrid\nremote\nsalary-low\nsalary-high\nrejected\ninterviewed\noffer\naccepted\n\n\n\n\n2024-10-09\nevil corp\nmr robot\n1\n\n\n50000\n1000000\n\n1\n1\n1",
+    "crumbs": [
+      "Projects",
+      "Visualizations",
+      "A Job Search Tracker"
+    ]
+  },
+  {
+    "objectID": "posts/viz/job-search-dashboard.html#python",
+    "href": "posts/viz/job-search-dashboard.html#python",
+    "title": "A Job Search Tracker",
+    "section": "3. Python",
+    "text": "3. Python\n\nopen a terminal and navigate to the project directory: cd ~/job-search\ncreate a virtual environment: python3.10 -m venv .venv\n\nI use pip, but uv is 🔥 right now (Oct 2024)\n\nactivate python source .venv/bin/activate\ninstall the project dependencies pip install -r requirements.txt\n\nNow, let’s check that everything is working. In the terminal run the following command to execute the testing logic: pytest.\nIf there are no errors then you’re safe to proceed to the next stage. If there are errors… open an issue 🤷",
+    "crumbs": [
+      "Projects",
+      "Visualizations",
+      "A Job Search Tracker"
+    ]
+  },
+  {
+    "objectID": "posts/viz/job-search-dashboard.html#quarto",
+    "href": "posts/viz/job-search-dashboard.html#quarto",
+    "title": "A Job Search Tracker",
+    "section": "4. Quarto",
+    "text": "4. Quarto\n\n_quarto.yml\n_quarto.yml is the control center of the Quarto project.\nHere is an example of a basic file. Customization is a bit outside our purposes. I encourage you to review thh Quarto docs.\nproject:\n  type: website\n  output-dir: public\n\nwebsite:\n  title: \"My Jobs Dashboard\"\n  site-url: \"\"\n  search: false\n  page-footer: \n    background: dark \n    right: Built with Quarto\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n\n\nHosting/ Publishing or GitHub vs GitLab\nThe dashboard can be published on either GitHub or Gitlab. GitHub is a little easier and the Quarto docs illustrate how to publish on GitHub.\nI rendered this dashboard on GitLab because I’ve never done that before and I wanted to learn how.\nThe _quarto.yml specifies where to render the dashboard. Notice the output-dir under project.\n\non GitLab Pages the output dir is ./public\non GitHub Pages the output dir is ./docs\n\nUpdate output-dir accordingly.\nOne last note on GitLab Pages. GitLab uses runners to publish the dashboard, while GitHub has a GUI option.\nTo use GitLab you need a file named .gitlab-ci.yml. Contents below.\nimage: alpine:latest\n\nstages:\n- test\n- deploy\n\nsast:\n  stage: test\ninclude:\n- template: Security/SAST.gitlab-ci.yml\n\npages:\n  stage: deploy\n  script:\n    - echo \"Deploying GitLab Pages from the public directory\"\n  artifacts:\n    paths:\n      - public \n  only:\n    - main\n\n\nRendering\nAssuming you installed Quarto, let’s render the output.\nIn the terminal, type either:\n\nquarto render - generates output in the specified directory\nquarto preview - reactive programming so that changes are rendered live\n\nPreview is helpful if you’re actively working on stuff. When you preview the dashboard will open in a browser.\nWhile render only produces output. To view the output go to ./public/index.html on GitLab or ./docs/index.html on GitHub.",
     "crumbs": [
       "Projects",
       "Visualizations",

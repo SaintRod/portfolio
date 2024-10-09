@@ -318,7 +318,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  <li><a href="#how-to" id="toc-how-to" class="nav-link" data-scroll-target="#how-to">How-to</a>
+  <ul class="collapse">
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">1. Software</a></li>
+  <li><a href="#plot-backgrounds" id="toc-plot-backgrounds" class="nav-link" data-scroll-target="#plot-backgrounds">2. Plot backgrounds</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">3. Data</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">3. Python</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">4. Quarto</a>
+  <ul class="collapse">
+  <li><a href="#quarto.yml" id="toc-quarto.yml" class="nav-link" data-scroll-target="#quarto.yml">_quarto.yml</a></li>
+  <li><a href="#hosting-publishing-or-github-vs-gitlab" id="toc-hosting-publishing-or-github-vs-gitlab" class="nav-link" data-scroll-target="#hosting-publishing-or-github-vs-gitlab">Hosting/ Publishing or GitHub vs GitLab</a></li>
+  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
   </ul>
 </nav>
     </div>
@@ -346,23 +359,189 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="about" class="level1">
 <h1>About</h1>
-<p>In August my spouse and I welcomed a tiny human into our lives. Life was good. And then while I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go.</p>
-<p>This dashboard was created to track my job search post Deloitte. However, anyone can use the dashboard as the code is open-source. The repo README provides instructions on how to do this.</p>
+<p>In August my spouse and I welcomed a tiny human into our lives. Life was good. Then when I returned from parental leave I was informed that my team at Deloitte, about 20 people, would be let go.</p>
+<p>This dashboard was created to track my job search post Deloitte. However, anyone can use the dashboard as the code is publicly available. The repo README provides instructions on how to do this. However, see below for a brief how-to.</p>
 <ul>
 <li><a href="https://gitlab.com/hail_hydra/job-search">code</a></li>
 <li><a href="https://job-search-cd9a22.gitlab.io/">dashboard</a></li>
-</ul>
-</section>
-<section id="software" class="level1">
-<h1>Software</h1>
-<ul>
-<li>Python</li>
-<li>Quarto</li>
 </ul>
 <div class="{=html}">
 <iframe src="https://job-search-cd9a22.gitlab.io/" width="100%" height="700px">
 </iframe>
 </div>
+</section>
+<section id="how-to" class="level1">
+<h1>How-to</h1>
+<p>You’ll notice that the repo does not provide a data template nor the images needed to recreate the fun Mario plot. But that’s OK because you’re clever and can easily recreate it.</p>
+<p>To use the repo, follow the steps in order as they are presented.</p>
+<p>PS. I gloss over how to download the files because I assume familiarity with git.</p>
+<p>PSS. The commands below are relevant for Ubuntu-based Linux distros. If you use Windows or something else, these commands won’t work.</p>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">1. Software</h2>
+<p>The elements of the dashboard were created using Python 3.10.</p>
+<p>The HTML output was created with Quarto - <a href="https://quarto.org/docs/get-started/">installation</a>. Install the latest version as Qurto dashboards require a minimum version (1.4 I think).</p>
+</section>
+<section id="plot-backgrounds" class="level2">
+<h2 class="anchored" data-anchor-id="plot-backgrounds">2. Plot backgrounds</h2>
+<p>To recreate the fun plot you will need two images:</p>
+<ul>
+<li><code>plot-background.png</code></li>
+<li><code>plot-point.png</code></li>
+</ul>
+<p>Ensure that the files are named <strong>exactly</strong> as the ones above.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">3. Data</h2>
+<ol type="1">
+<li>The dashboard requires a CSV file saved in <code>./data/input</code>
+<ul>
+<li>You can name the file whatever you want</li>
+<li>For this example, let’s pretend the file is named <code>elliott.csv</code></li>
+</ul></li>
+<li>The file must contain the following columns
+<ul>
+<li>The data types are in the repo README</li>
+</ul></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 6%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">date</th>
+<th style="text-align: center;">company</th>
+<th style="text-align: center;">role</th>
+<th style="text-align: center;">onsite</th>
+<th style="text-align: center;">hybrid</th>
+<th style="text-align: center;">remote</th>
+<th style="text-align: center;">salary-low</th>
+<th style="text-align: center;">salary-high</th>
+<th style="text-align: center;">rejected</th>
+<th style="text-align: center;">interviewed</th>
+<th style="text-align: center;">offer</th>
+<th style="text-align: center;">accepted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2024-10-09</td>
+<td style="text-align: center;">evil corp</td>
+<td style="text-align: center;">mr robot</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">50000</td>
+<td style="text-align: center;">1000000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">3. Python</h2>
+<ul>
+<li>open a terminal and navigate to the project directory: <code>cd ~/job-search</code></li>
+<li>create a virtual environment: <code>python3.10 -m venv .venv</code>
+<ul>
+<li>I use <code>pip</code>, but <code>uv</code> is 🔥 right now (Oct 2024)</li>
+</ul></li>
+<li>activate python <code>source .venv/bin/activate</code></li>
+<li>install the project dependencies <code>pip install -r requirements.txt</code></li>
+</ul>
+<p>Now, let’s check that everything is working. In the terminal run the following command to execute the testing logic: <code>pytest</code>.</p>
+<p>If there are no errors then you’re safe to proceed to the next stage. If there are errors… open an issue 🤷</p>
+</section>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">4. Quarto</h2>
+<section id="quarto.yml" class="level3">
+<h3 class="anchored" data-anchor-id="quarto.yml">_quarto.yml</h3>
+<p><code>_quarto.yml</code> is the control center of the Quarto project.</p>
+<p>Here is an example of a basic file. Customization is a bit outside our purposes. I encourage you to review thh Quarto <a href="https://quarto.org/docs/reference/">docs</a>.</p>
+<pre><code>project:
+  type: website
+  output-dir: public
+
+website:
+  title: "My Jobs Dashboard"
+  site-url: ""
+  search: false
+  page-footer: 
+    background: dark 
+    right: Built with Quarto
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false</code></pre>
+</section>
+<section id="hosting-publishing-or-github-vs-gitlab" class="level3">
+<h3 class="anchored" data-anchor-id="hosting-publishing-or-github-vs-gitlab">Hosting/ Publishing or GitHub vs GitLab</h3>
+<p>The dashboard can be published on either GitHub or Gitlab. GitHub is a little easier and the Quarto docs illustrate how to <a href="https://quarto.org/docs/publishing/">publish</a> on GitHub.</p>
+<p>I rendered this dashboard on GitLab because I’ve never done that before and I wanted to learn how.</p>
+<p>The <code>_quarto.yml</code> specifies where to render the dashboard. Notice the <code>output-dir</code> under <code>project</code>.</p>
+<ul>
+<li>on GitLab Pages the output dir is <code>./public</code></li>
+<li>on GitHub Pages the output dir is <code>./docs</code></li>
+</ul>
+<p>Update <code>output-dir</code> accordingly.</p>
+<p>One last note on GitLab Pages. GitLab uses runners to publish the dashboard, while GitHub has a GUI option.</p>
+<p>To use GitLab you need a file named <code>.gitlab-ci.yml</code>. Contents below.</p>
+<pre><code>image: alpine:latest
+
+stages:
+- test
+- deploy
+
+sast:
+  stage: test
+include:
+- template: Security/SAST.gitlab-ci.yml
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying GitLab Pages from the public directory"
+  artifacts:
+    paths:
+      - public 
+  only:
+    - main</code></pre>
+</section>
+<section id="rendering" class="level3">
+<h3 class="anchored" data-anchor-id="rendering">Rendering</h3>
+<p>Assuming you installed Quarto, let’s render the output.</p>
+<p>In the terminal, type either:</p>
+<ul>
+<li><code>quarto render</code> - generates output in the specified directory</li>
+<li><code>quarto preview</code> - reactive programming so that changes are rendered live</li>
+</ul>
+<p>Preview is helpful if you’re actively working on stuff. When you preview the dashboard will open in a browser.</p>
+<p>While render only produces output. To view the output go to <code>./public/index.html</code> on GitLab or <code>./docs/index.html</code> on GitHub.</p>
+</section>
+</section>
+</section>
+<section id="sources" class="level1">
+<h1>Sources</h1>
+<ul>
+<li><a href="https://posit.co/blog/parameterized-quarto/?mkt_tok=NzA5LU5YTi03MDYAAAGWBzgd8C3YF2Z3WJ0sCKNLO7frm1nb1oY62LJ6xTO3gkAfRm94nLa_lU3LoRe9ZGg1Ynvti57KZFZH77r-b15iDbPZqll4cMHMSAxQLLXyA2k">Automating Quarto reports with parameters</a></li>
+<li>Quarto <a href="https://quarto.org/docs/dashboards/">Dashboards</a></li>
+</ul>
 
 
 </section>
