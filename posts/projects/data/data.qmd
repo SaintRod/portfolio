@@ -1,0 +1,16 @@
+---
+title: "Data"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# About
+
+This section describes data engineering projects.
+
+While I have mostly focused on data science work, I have done plenty of data wrangling.
+Since I love to learn I've often volunteered to assist the data engineers when they've asked for extra help.
+
+- A data pipeline for projects using my household energy consumption, [link](household-energy-pipeline.qmd)

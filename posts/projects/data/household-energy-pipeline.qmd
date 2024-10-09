@@ -1,0 +1,77 @@
+---
+title: "Household Energy Consumption Data Pipeline"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# Data
+
+The smart meters can provide data as granular as 15-minute intervals.
+As you can imagine the data grows quickly.
+
+In addition to the energy data I also work with weather data obtained via a NOAA API.
+
+# Data Pipeline
+
+My first attempt at building a data pipeline was built in R and was wonky.
+I don't remember when I started this project.
+
+Sometime in Q3 2024 I decided to refactor the data pipeline.
+I still used R but I completely overhauled the code.
+
+The goal of refactoring was to modernize the code, create modules, reproducibility, unit tests, leverage the cloud, and ease of use.
+
+One of the main changes was the introduction of the [box](https://github.com/klmr/box) package.
+
+Using `box` changed how I code in R.
+Normally, R users are taught to use `library(pkg)`.
+But this is the antithesis many modern languages because `library()` imports all the namespaces.
+Working box makes coding in R like coding in Python or Julia.
+Since I learned how to use box I haven't gone back.
+
+Another change to how I used to write R code is leveraging base R more.
+When I learned R in 2014 all I knew was base R.
+Then over time I leaned more heavily on third-party packages, such as the Tidyverse.
+But, I've grown as a developer.
+I care much more about reproducibility now.
+And having tons of dependencies is risky.
+
+Using box I created functions within modules and organized the modules by scope.
+For example, all AWS functions are housed in ./src/AWS.
+
+Another sign of my maturity as a [statistical] programmer is testing.
+In R this done via the `testthat` package.
+I now test all of my functions.
+I do this even for analyses.
+How else can my work be trusted?
+
+The data itself also received a face-lift.
+I updated how the data is stored.
+I now use `Arrow`, e.g., `energy.arrow`.
+And where the data is stored also changed.
+The data is exported locally and in the cloud.
+The data in the cloud is stored in a private AWS S3 bucket.
+The local files are backups.
+
+Finally, I used the R package `docopt` to create command line arguments.
+This makes executing the pipeline a breeze.
+For example, first I download the latest data from the website.
+I save the file in `./data/input`.
+In the terminal I execute `Rscript main.R --help` if I forget which flags exist.
+To run the code: `Rscript main.R -t -e -w`.
+Where `-t` executes the tests.
+This ensures everything is up to snuff.
+The `-e` executes the energy pipeline.
+And the `-w` executes the weather pipeline.
+
+I recently found out a package called [targets](https://docs.ropensci.org/targets/) that is designed for pipelines.
+I may explore this in the future.
+
+Overall, I'm very happy with the refactoring.
+
+# Code
+
+Currently the code is private.
+If and when this changes I'll update this page with a link to the repo.
