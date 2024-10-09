@@ -6,3 +6,11 @@ format:
 editor: source
 ---
 
+# About
+
+Throughout my time as a data scientist I've been tasked with forecasting projects.
+While it's fun to talk about these projects, I can't share any output or code.
+
+The projects below are passion projects to illustrate my knowledge and capabilities.
+
+- Forecasting my household's energy consumption, [link](#household-forecasting.qmd)

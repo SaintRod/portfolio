@@ -1,0 +1,96 @@
+---
+title: "Forecasting My Household's Energy Consumption"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# TL;DR
+
+I used my household energy consumption data to build forecasting models and put the models into production using APIs and docker.
+
+# About
+
+When I worked at Deloitte we were tasked with creating a forecast for sales opportunities.
+After implementing a forecasting workflow on Databricks, I had an idea.
+I always have ideas.
+
+I proposed to my leaders that we refactor the code and architect a new solution.
+My idea was so modularize and generalize the code, so that it could easily extend to any configuration.
+By this I mean that eventually it wasn't just the global CFO that wanted our forecast, but local member firm leaders as well.
+This project was one our teams biggest hits.
+
+The down side to killer projects at work is that there isn't anything tangible to show for them.
+So, I decided to replicate the architecture of the Deloitte project and improve it.
+
+One thing I've noticed over the years is that much of the work data scientists create goes unused.
+I think this is why the machine-learning-engineer branch of data science formed.
+It's not enough to create models.
+The missing piece was putting the models into production.
+That's why in this project production is a key element.
+
+# Data
+
+I built a data pipeline for my household energy data and corresponding daily weather data.
+The data is housed in a private AWS S3 bucket.
+
+See the post under "Data" called "Household Energy Consumption Data Pipeline" about the data pipeline for more info.
+
+# Planning
+
+As of Oct 9th, 2024 this project is still in the planning phase because as my late father in-law used to say, before starting any project you should, "sit on your butt and think."
+
+For this project I will create forecasting models in Python and R.
+**Yes**, you read that correctly, this is a multilingual project!
+I am also exploring if Julia has time series forecasting capabilities.
+I started learning Julia c. 2021 and enjoy using it.
+
+I will use statistical, machine learning, and deep learning models.
+In Python, this will be accomplished via the `Nixtla` suite of packages.
+In R, I will use `fable and `modeltime` via `tidymodels`.
+
+The challenge I'm thinking through is how to easily split training the models and forecasting.
+A neat trick that I came up with on the Deloitte project is to store all of the models in a module.
+This module can be imported into the training and forecasting workflows, respectively.
+The neat thing about this solution is that it avoids repetition.
+I also think it's cleaner this way as everything is centralized.
+
+An example project structure could be:
+
+```
+project-root
+    - py
+        - src
+            - models
+                - stats.py
+                - ml.py
+                - dl.py
+        - scripts
+            - training
+                - main.py
+            - forecasting
+                - main.py
+        - main.py
+```
+
+In this structure the models are modules that the training and forecasting workflows or pipelines leverage.
+
+The `main` module will have a toggle to switch between training and forecasting.
+As this is a passion project and the forecasts aren't used for anything, I don't need to update the models frequently.
+I think that having main flip between training and forecasting is better than manually executing things.
+For example, `./py/main.py` will import `./py/training/main.py` and `./py/forecasting/main.py`.
+Each of the children main files will be mini-control centers for their respective workflows.
+
+Some thought about production.
+My goal is to put this work into production, and for that I need a way to interact with the models easily.
+To accomplish this I want to create a `fastAPI` for the python forecasts and a `plumber` API for the R forecasts.
+I'll likely package in a container using `docker` or `podman`.
+
+I'll host the container on a spare desktop I've beefed up for these purposes - 16 cores, 64 GB RAM, and a NVIDIA GPU.
+When there's new data and I want to obtain the latest forecasts I'll spin up my spare desktop and ping it.
+
+# Code
+
+Currently, as the work is evolving the project is private.
+However, the goal is to make the code publicly available.
