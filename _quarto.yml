@@ -39,6 +39,10 @@ website:
               contents: 
                 - posts/projects/analyses/arxiv-stats-pkgs.qmd
                 - posts/projects/analyses/internet-outage.qmd
+            - section: Data
+              href: posts/projects/data/data.qmd
+              contents:
+                - posts/projects/data/household-energy-pipeline.qmd
             # - section: Causal ML
             #   href: 
             # - section: ML
@@ -47,8 +51,10 @@ website:
               href: posts/projects/stats/stats.qmd
               contents:
                 - posts/projects/stats/hypothesis-testing-primer.qmd
-            # - section: Time Series
-            #   href: posts/projects/time-series/time-series.qmd
+            - section: Time Series
+              href: posts/projects/time-series/time-series.qmd
+              contents:
+                - posts/projects/time-series/household-forecasting.qmd
             - section: Tools
               href: posts/projects/tools/tools.qmd
               contents:
