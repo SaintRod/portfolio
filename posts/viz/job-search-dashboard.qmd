@@ -10,20 +10,166 @@ editor: source
 
 In August my spouse and I welcomed a tiny human into our lives.
 Life was good.
-And then while I was on parental leave when I was informed that my team at Deloitte, about 20 people, would be let go.
+Then when I returned from parental leave I was informed that my team at Deloitte, about 20 people, would be let go.
 
 This dashboard was created to track my job search post Deloitte.
-However, anyone can use the dashboard as the code is open-source.
+However, anyone can use the dashboard as the code is publicly available.
 The repo README provides instructions on how to do this.
+However, see below for a brief how-to.
 
 - [code](https://gitlab.com/hail_hydra/job-search)
 - [dashboard](https://job-search-cd9a22.gitlab.io/)
 
-# Software
-
-- Python
-- Quarto
-
 ::: {=html}
 <iframe src="https://job-search-cd9a22.gitlab.io/" width="100%" height="700px"></iframe>
 :::
+
+\newpage
+
+# How-to
+
+You'll notice that the repo does not provide a data template nor the images needed to recreate the fun Mario plot.
+But that's OK because you're clever and can easily recreate it.
+
+To use the repo, follow the steps in order as they are presented.
+
+PS. I gloss over how to download the files because I assume familiarity with git.
+
+PSS. The commands below are relevant for Ubuntu-based Linux distros.
+If you use Windows or something else, these commands won't work.
+
+## 1. Software
+
+The elements of the dashboard were created using Python 3.10.
+
+The HTML output was created with Quarto - [installation](https://quarto.org/docs/get-started/).
+Install the latest version as Qurto dashboards require a minimum version (1.4 I think).
+
+## 2. Plot backgrounds
+
+To recreate the fun plot you will need two images:
+
+- `plot-background.png`
+- `plot-point.png`
+
+Ensure that the files are named **exactly** as the ones above.
+
+## 3. Data
+
+1. The dashboard requires a CSV file saved in `./data/input`
+    - You can name the file whatever you want
+    - For this example, let's pretend the file is named `elliott.csv`
+2. The file must contain the following columns
+    - The data types are in the repo README
+
+| date | company | role | onsite | hybrid | remote | salary-low | salary-high | rejected | interviewed | offer | accepted |
+|:----:|:-------:|:----:|:------:|:------:|:------:|:----------:|:-----------:|:--------:|:-----------:|:-----:|:--------:|
+|2024-10-09|evil corp|mr robot|1|||50000|1000000||1|1|1|
+
+## 3. Python
+
+- open a terminal and navigate to the project directory: `cd ~/job-search`
+- create a virtual environment: `python3.10 -m venv .venv`
+  - I use `pip`, but `uv` is 🔥 right now (Oct 2024)
+- activate python `source .venv/bin/activate`
+- install the project dependencies `pip install -r requirements.txt`
+
+Now, let's check that everything is working.
+In the terminal run the following command to execute the testing logic: `pytest`.
+
+If there are no errors then you're safe to proceed to the next stage.
+If there are errors... open an issue 🤷
+
+## 4. Quarto
+
+### _quarto.yml
+
+`_quarto.yml` is the control center of the Quarto project.
+
+Here is an example of a basic file.
+Customization is a bit outside our purposes.
+I encourage you to review thh Quarto [docs](https://quarto.org/docs/reference/).
+
+```
+project:
+  type: website
+  output-dir: public
+
+website:
+  title: "My Jobs Dashboard"
+  site-url: ""
+  search: false
+  page-footer: 
+    background: dark 
+    right: Built with Quarto
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+```
+
+### Hosting/ Publishing or GitHub vs GitLab
+
+The dashboard can be published on either GitHub or Gitlab.
+GitHub is a little easier and the Quarto docs illustrate how to [publish](https://quarto.org/docs/publishing/) on GitHub.
+
+I rendered this dashboard on GitLab because I've never done that before and I wanted to learn how.
+
+The `_quarto.yml` specifies where to render the dashboard.
+Notice the `output-dir` under `project`.
+
+- on GitLab Pages the output dir is `./public`
+- on GitHub Pages the output dir is `./docs`
+
+Update `output-dir` accordingly.
+
+One last note on GitLab Pages.
+GitLab uses runners to publish the dashboard, while GitHub has a GUI option.
+
+To use GitLab you need a file named `.gitlab-ci.yml`.
+Contents below.
+
+```
+image: alpine:latest
+
+stages:
+- test
+- deploy
+
+sast:
+  stage: test
+include:
+- template: Security/SAST.gitlab-ci.yml
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying GitLab Pages from the public directory"
+  artifacts:
+    paths:
+      - public 
+  only:
+    - main
+```
+
+### Rendering
+
+Assuming you installed Quarto, let's render the output.
+
+In the terminal, type either:
+
+- `quarto render` - generates output in the specified directory
+- `quarto preview` - reactive programming so that changes are rendered live
+
+Preview is helpful if you're actively working on stuff.
+When you preview the dashboard will open in a browser.
+
+While render only produces output.
+To view the output go to `./public/index.html` on GitLab or `./docs/index.html` on GitHub.
+
+# Sources
+
+- [Automating Quarto reports with parameters](https://posit.co/blog/parameterized-quarto/?mkt_tok=NzA5LU5YTi03MDYAAAGWBzgd8C3YF2Z3WJ0sCKNLO7frm1nb1oY62LJ6xTO3gkAfRm94nLa_lU3LoRe9ZGg1Ynvti57KZFZH77r-b15iDbPZqll4cMHMSAxQLLXyA2k)
+- Quarto [Dashboards](https://quarto.org/docs/dashboards/)
