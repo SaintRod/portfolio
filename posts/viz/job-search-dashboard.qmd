@@ -43,7 +43,7 @@ If you use Windows or something else, these commands won't work.
 The elements of the dashboard were created using Python 3.10.
 
 The HTML output was created with Quarto - [installation](https://quarto.org/docs/get-started/).
-Install the latest version as Qurto dashboards require a minimum version (1.4 I think).
+Install the latest version as Quarto dashboards require a minimum version (1.4 I think).
 
 ## 2. Plot backgrounds
 
@@ -88,7 +88,7 @@ If there are errors... open an issue 🤷
 
 Here is an example of a basic file.
 Customization is a bit outside our purposes.
-I encourage you to review thh Quarto [docs](https://quarto.org/docs/reference/).
+I encourage you to review the Quarto [docs](https://quarto.org/docs/reference/).
 
 ```
 project:
@@ -112,7 +112,7 @@ format:
 
 ### Hosting/ Publishing or GitHub vs GitLab
 
-The dashboard can be published on either GitHub or Gitlab.
+The dashboard can be published on either GitHub or GitLab.
 GitHub is a little easier and the Quarto docs illustrate how to [publish](https://quarto.org/docs/publishing/) on GitHub.
 
 I rendered this dashboard on GitLab because I've never done that before and I wanted to learn how.
