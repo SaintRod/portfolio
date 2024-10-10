@@ -22,7 +22,7 @@
     "href": "posts/projects/projects.html",
     "title": "Projects",
     "section": "",
-    "text": "This is the largest section, and the one hiring manager and recruiters will most likely be interested in.\nIn this section you’ll find code, output, and more! My interests span a wide range of topics, from building web apps to machine learning models.\nThe following are areas I’d like to explore further, presented in no particular order.\n\nRAG\ndeep learning\nauto diff\noptimization\nGenie in Julia\nShiny for Python\nbuild an API\ncausal ML",
+    "text": "This is the largest section, and the one hiring manager and recruiters will most likely be interested in.\nIn this section you’ll find code, output, and more! My interests span a wide range of topics, from building web apps to machine learning models.\nThe following are areas I’d like to explore further or projects I want to work on, presented in no particular order.\n\nRAG (LLMs)\ndeep learning from scratch (Keras, PyTorch, TensorFlow)\nauto diff (Jax, JuMP)\noptimization\nGenie (Julia)\nShiny for Python\nbuild an API (fastAPI, plumber)\ncausal inference (unsure yet how this differs from experimentation from a statistics perspective)\nsurvival analysis\na primer on driver analysis\nhighlighting the utility of categorical data analysis",
     "crumbs": [
       "Projects"
     ]

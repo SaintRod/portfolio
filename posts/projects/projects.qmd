@@ -11,13 +11,16 @@ This is the largest section, and the one hiring manager and recruiters will most
 In this section you'll find code, output, and more!
 My interests span a wide range of topics, from building web apps to machine learning models.
 
-The following are areas I'd like to explore further, presented in no particular order.
+The following are areas I'd like to explore further or projects I want to work on, presented in no particular order.
 
-- RAG
-- deep learning
-- auto diff
+- RAG (LLMs)
+- deep learning from scratch (Keras, PyTorch, TensorFlow)
+- auto diff (Jax, JuMP)
 - optimization
-- Genie in Julia
+- Genie (Julia)
 - Shiny for Python
-- build an API
-- causal ML
+- build an API (fastAPI, plumber)
+- causal inference (unsure **yet** how this differs from experimentation from a statistics perspective)
+- survival analysis
+- a primer on driver analysis
+- highlighting the utility of categorical data analysis
