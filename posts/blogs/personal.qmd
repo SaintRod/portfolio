@@ -1,0 +1,17 @@
+---
+title: "My Personal Blog"
+format:
+  html:
+    toc: true
+editor: source
+---
+
+# About
+
+This [blog](https://saintrod.github.io/personal-blog/) is a place for me to write about stuff.
+
+In particular, I write about data stuff.
+For example, I may write a series about one of my passion projects.
+I might write something about data science in the wild.
+
+Please take a look, I would appreciate it.

@@ -196,7 +196,7 @@
     "href": "posts/blogs/blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "I enjoy writing. But I don’t enjoy paywalls. So, I write on open platforms, such as GitHub Pages or Quarto Pubs.\nIn this section you’ll find collections of writings. Enjoy!",
+    "text": "I enjoy writing. But I don’t enjoy paywalls. So, I write on open platforms, such as GitHub Pages or Quarto Pubs.\nIn this section you’ll find collections of writings. Enjoy!\n\nFunctional data analysis\nPersonal blog about data stuff",
     "crumbs": [
       "Blogs"
     ]
@@ -210,6 +210,17 @@
     "crumbs": [
       "Blogs",
       "Functional Data Analysis"
+    ]
+  },
+  {
+    "objectID": "posts/blogs/personal.html",
+    "href": "posts/blogs/personal.html",
+    "title": "My Personal Blog",
+    "section": "",
+    "text": "About\nThis blog is a place for me to write about stuff.\nIn particular, I write about data stuff. For example, I may write a series about one of my passion projects. I might write something about data science in the wild.\nPlease take a look, I would appreciate it.",
+    "crumbs": [
+      "Blogs",
+      "My Personal Blog"
     ]
   },
   {

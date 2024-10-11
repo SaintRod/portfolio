@@ -5,6 +5,9 @@ project:
 website:
   title: "Santiago Rodriguez"
   site-url: "https://saintrod.github.io/portfolio/"
+  favicon: static/favicon.png
+  description: "My portfolio"
+  bread-crumbs: true
   navbar:
     left:
       - text: Home
@@ -31,6 +34,7 @@ website:
           href: posts/blogs/blogs.qmd
           contents:
             - posts/blogs/fda.qmd
+            - posts/blogs/personal.qmd
         - section: Projects
           href: posts/projects/projects.qmd
           contents:
