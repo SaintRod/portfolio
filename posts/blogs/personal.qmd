@@ -8,7 +8,7 @@ editor: source
 
 # About
 
-This [blog](https://saintrod.github.io/personal-blog/) is a place for me to write about stuff.
+This [blog](https://personal-blog-bd9627.gitlab.io/) is a place for me to write about stuff.
 
 In particular, I write about data stuff.
 For example, I may write a series about one of my passion projects.

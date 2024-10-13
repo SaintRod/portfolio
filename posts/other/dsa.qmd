@@ -1,12 +1,12 @@
 ---
-title: Study Guides
+title: Data structures and algorithms
 format:
   html:
     toc: true
 editor: source
 ---
 
-# Data structures and algorithms
+# About
 
 I find it helpful to make my notes available online so that I can access them from anywhere.
 The following notes are from lessons on data structures and algorithms.

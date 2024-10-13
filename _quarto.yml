@@ -79,7 +79,7 @@ website:
         - section: Other
           href: posts/other/other.qmd
           contents:
-            - posts/other/study-guides.qmd
+            - posts/other/dsa.qmd
 
   page-footer: 
     background: dark 

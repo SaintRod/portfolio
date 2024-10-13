@@ -7,14 +7,13 @@
     "text": "Howdy.\nMy name is Santiago Rodriguez and I am a statistician, statistical programmer, machine learning practitioner, and a life-long learner.\nI enjoy traveling. Some of my favorite places to visit are Norway and Japan.\nThe best way to contact me is through LinkedIn."
   },
   {
-    "objectID": "posts/other/study-guides.html",
-    "href": "posts/other/study-guides.html",
-    "title": "Study Guides",
+    "objectID": "posts/other/other.html",
+    "href": "posts/other/other.html",
+    "title": "Other",
     "section": "",
-    "text": "Data structures and algorithms\nI find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.\n\ndata structures\nalgorithms\n\nThe course provided Python examples, and I replicated these examples using Julia and R.\n\nJulia\nPython\nR",
+    "text": "In this section you’ll find a collection of random things, from notes I took while reading a book or a video online.",
     "crumbs": [
-      "Other",
-      "Study Guides"
+      "Other"
     ]
   },
   {
@@ -338,13 +337,14 @@
     ]
   },
   {
-    "objectID": "posts/other/other.html",
-    "href": "posts/other/other.html",
-    "title": "Other",
+    "objectID": "posts/other/dsa.html",
+    "href": "posts/other/dsa.html",
+    "title": "Data structures and algorithms",
     "section": "",
-    "text": "In this section you’ll find a collection of random things, from notes I took while reading a book or a video online.",
+    "text": "About\nI find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.\n\ndata structures\nalgorithms\n\nThe course provided Python examples, and I replicated these examples using Julia and R.\n\nJulia\nPython\nR",
     "crumbs": [
-      "Other"
+      "Other",
+      "Data structures and algorithms"
     ]
   },
   {
