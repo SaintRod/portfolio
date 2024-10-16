@@ -17,6 +17,18 @@
     ]
   },
   {
+    "objectID": "posts/other/study-guides/dsa.html",
+    "href": "posts/other/study-guides/dsa.html",
+    "title": "Data structures and algorithms",
+    "section": "",
+    "text": "About\nI find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.\n\ndata structures\nalgorithms\n\nThe course provided Python examples, and I replicated these examples using Julia and R.\n\nJulia\nPython\nR",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "Data structures and algorithms"
+    ]
+  },
+  {
     "objectID": "posts/projects/projects.html",
     "href": "posts/projects/projects.html",
     "title": "Projects",
@@ -337,14 +349,110 @@
     ]
   },
   {
-    "objectID": "posts/other/dsa.html",
-    "href": "posts/other/dsa.html",
-    "title": "Data structures and algorithms",
-    "section": "",
-    "text": "About\nI find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.\n\ndata structures\nalgorithms\n\nThe course provided Python examples, and I replicated these examples using Julia and R.\n\nJulia\nPython\nR",
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#variable-types-and-terminology",
+    "href": "posts/other/study-guides/elements-stat-learning.html#variable-types-and-terminology",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.2 Variable types and terminology",
+    "text": "2.2 Variable types and terminology\n\n\\(\\vec{Y}\\): response variable, dependent variable, outcome, regressor, target\n\\(X\\): feature matrix, predictors, independent variables\n\nQualitative \\(\\vec{Y}\\): categorical (nominal, ordinal), discrete, or factors (with \\(f\\) levels)\nQuantitative \\(\\vec{Y}\\): regression Qualitative \\(\\vec{Y}\\): classification\nBinary qualitative \\(\\vec{x}\\): usually coded as {0, 1} | {-1, 1}\nQualitative \\(\\vec{x}\\) with \\(\\gt 2\\) levels: dummy variables (where \\(l-1\\) variables are created)",
     "crumbs": [
       "Other",
-      "Data structures and algorithms"
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#two-simple-approaches-least-squares-vs-nearest-neighbors",
+    "href": "posts/other/study-guides/elements-stat-learning.html#two-simple-approaches-least-squares-vs-nearest-neighbors",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.3 Two simple approaches: least squares vs nearest neighbors",
+    "text": "2.3 Two simple approaches: least squares vs nearest neighbors\nFirst implicit mention of bias variance tradeoff. The more flexible a model, the lower the bias but higiher the variance. Vice versa, the more inflexible a model, the greather the bias but lower the variance.\n\n2.3.1 Linear models and least squares\n\\(\\hat{Y} = \\hat{\\beta_0} + \\sum_{j=1}^{p} X_j \\hat{\\beta_j}\\)\nor\n\\(\\hat{Y} = X^{\\top} \\hat{\\beta}\\)\n\n\\(\\hat{\\beta_0}\\): intercept or bias (in ML lore)\n\nMost common way to fit the linear model is least squares.\nThe task is to minimize the residual sum of squares (RSS):\n\\(RSS(\\beta) = \\sum_{i=1}^{N} (y_i - \\hat{y_i})^2\\)\nDegress of freedom: \\(N - p\\)\n\n\n2.3.2 Nearest-neighbor methods\n\\(\\hat{Y} = \\frac{1}{k} \\sum_{x_i \\in N_k (x)} y_i\\)\nWhere \\(N_k (x)\\) = neighborhood of \\(x\\) defined by \\(k\\) closest observations.\nDegress of freedom: \\(\\frac{N}{k}\\)\nFirst mention of not using training data to assess fit.",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#statistical-decision-theory",
+    "href": "posts/other/study-guides/elements-stat-learning.html#statistical-decision-theory",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.4 Statistical decision theory",
+    "text": "2.4 Statistical decision theory\n\\(X\\) and \\(\\vec{Y}\\) ~ \\(P(X, Y)\\) = a joint distribution.\nThe task is to \\(\\approx\\) a function \\(f(X)\\) for prediction \\(Y\\) given the values of \\(X\\).\nLoss function: \\(L(Y, f(x))\\)\nThe most common loss function is squared error loss: \\((Y - f(x))^2\\)\n\nknown as the \\(L_2\\) loss\nmean\noptimization: minimize: \\(argmin_c E_{Y | X} ([Y-c]^2 | X = x)\\)\nsolution to ^ = the regression function or conditional expectation: \\(f(x) = E(Y | X = x)\\)\nthe best prediction for \\(Y\\) for any \\(X = x\\) is the conditional mean when measured by average squared error\n\nWhy not alwasys use the most flexible model? If the data is best approximated by a linear, parametric, or inflexible model is more appropriate then can usually get more stable estimates.\nFirst mention of the curse of dimensionality. For nearest neighbors methods, as \\(p\\) - number of predictors - increases, the number of observations at \\(k\\) decreases. The asymptotic approximations still hold, but the rate at which convergence occurs slows.\nUltimately, both the model-centric or parametric and nearest neighbors approachs \\(\\approx\\) the conditional expectations via averages.\n\\(L_1 = |Y - \\hat{Y}|\\) = median(\\(Y | X = x\\)) - the median of the conditional expectation.\n\nmore robust than \\(L_2\\) loss, i.e., less sensitive to extreme values\nnon-convex optimization problem,i.e., discontinuities in the derivative\n\n……………………..\nWhat about qualitative \\(Y\\)?\n\nzero-one loss: missiclassifications are coded as 1\n\nEPE = \\(E[L(G, \\hat{G}(X))]\\)\n\\(\\hat{G} = argmin_{g \\in G} [1 - P(g | X = x)]\\)\n\nor, \\(\\hat{G} = G_k\\) if \\(P(G_k | X = x) = max_{g \\in G} P(g | X = x)\\)\n\n\n\nThis is known at the Bayes classifier: classify to the most probable class The error rate for the Bayes classifier = Bayes rate.",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#local-methods-in-high-dimensions",
+    "href": "posts/other/study-guides/elements-stat-learning.html#local-methods-in-high-dimensions",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.5 Local methods in high dimensions",
+    "text": "2.5 Local methods in high dimensions\nFormally discusses the curse of dimensionality.\nHypothetical scenario for nearest neighbor. Assume the data is uniformily distrubuted in a p-dimensional unit hypercube (figure 2.6 p. 23). The notion of local average breaks down quickly. For example, in 10 dimensions (\\(p\\) = 10) to capture 1% or 10% of the data for a local average, need 63% or 80% of the range of each predictor.\nAnother issue with high dimensions is that all obsevations are near an edge (and far away from other observations). This is an issue because prediction is harder at the boundries.\nSampling density is proportional to \\(N^{\\frac{1}{p}}\\) where \\(p\\) = dimension of the input space (i.e., number of columns in \\(X\\)). If \\(p\\) = 1 and \\(N\\) = 100, then to acheive the same sampling density the sample size required is \\(N_10 = 100^{10}\\).\n……………………..\nBias-variance decomposition AKA bias-variance tradeoff.\nMSE = Mean Squared Error\n\n\\(E[y - \\hat{y}]^2\\)\n\\(E[\\hat{y} - E(\\hat{y})]^2 + [E(\\hat{y}) - y]^2\\)\nVar(\\(\\hat{y}\\)) + Bias\\(^2(\\hat{y})\\)\nVar + Bias\\(^2\\)\n\nTo estiamte functions with many variables, need large training data. More variables, more data.\n……………………..\nWhen the assumptions are apporpriate, the linear model is unbiased (BLUE = best linear unbiased estimator). That is, MSE only depends on the variance term. If, however, the assumptions are inapporpriate, then the model is biased.",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#statistical-models-supervised-learning-and-function-approximation",
+    "href": "posts/other/study-guides/elements-stat-learning.html#statistical-models-supervised-learning-and-function-approximation",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.6 Statistical models, supervised learning, and function approximation",
+    "text": "2.6 Statistical models, supervised learning, and function approximation\n\n2.6.1 A statistical model for the join distribution \\(P(X, Y)\\)\nThe additive model: \\(Y = f(X) + \\epsilon\\)\nAdditive in the sense that the error term is added to the function results.\nThis form is not usually applied to qualitative \\(Y\\).\n\n\n2.6.2 Supervised learning\nThe supervised learning paradigm.\nLearn \\(f()\\) by example through a teacher.\nUses a training set as a sample of the full data.\nThe learning algorithm learns by example.\n\n\n2.6.3 Function approximation\nComputer science -&gt; supervised learning paradigm\nWhile applied math and statistics -&gt; function approximation and estimation.\nSR: Leo B. “the two cultures”\nIt can be useful to approach supervised learning as a problem in funciton approximation because it encourages geometrical concepts. This is the approach of this book.\nAnother class of useful approximators is the linear basis expansion: \\(f_{\\theta}(x) = \\sum_{i=1}^{K} h_k (x) \\theta_k\\)\nWhere \\(h_k()\\) are functions or transformations of the input vector \\(\\vec{x}\\). Examples: polynomial or trigonometric expansions, and nonlinear expansions such as the sigmoid transformation: \\(\\frac{1}{1 + e^{-x}}\\)\n……………………..\nLeast squares is convenient it is not the only criteria. There are also iterative and numerical optimization methods.\nA more general estimation method is maximum likelihood estimation.\n\n\\(L(\\theta)\\) = Likelihood function\nAssumes that the most reasonable (read likely) values for \\(\\theta\\) [wrt to the Likelihood function] are those for which the probability of the observed sample is largest\nLeast squares is a special case of MLE that uses the conditional likelihood: \\(P(Y | X, \\theta) = N(f_{\\theta}(X), \\sigma^2)\\)\nAnother example is the multinomial likelihood function \\(P(G | X)\\)\n\nlog-likelihood: \\(L(\\theta) = \\sum_{i=1}^{N} log \\ p_{g_i, \\theta} (x_i)\\)\nAlso known as cross-entropy loss",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#structured-regression-models",
+    "href": "posts/other/study-guides/elements-stat-learning.html#structured-regression-models",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.7 Structured regression models",
+    "text": "2.7 Structured regression models\n\n2.7.1 Difficulty of the problem\nThere may exist infinitely many solutions to the optimization probelm (i.e., minizing the loss function). It’s useful to enforce restrictions. The restrictions are sometimes encoded into the parametric function \\(\\hat{f}()\\) or may be built into the learning method itself. Most restrictions can be described as complexity restrictions - usually means some kind of regular behavior in small neighborhoods of the input space.\nThe strength of the constraint depends on the neighborhood size. The larger the neighborhood, the stronger the constraint, and more sensitive the solution is to the choice of constraint. For example, local linear fits on tiny neighborhoods is [practically] no constraint at all. While local linear fits in large neighborhoods is \\(\\approx\\) globally linear model and is very restrictive.\nTakeaway: any method that attempts to produce locally varying functions in small isotropic (read homogeneous) neighborhoods will struggle in high dimensions\n\nisotropic: (of an object or substance) having a physical property which has the same value when measured in different directions",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#classes-of-restricted-estimators",
+    "href": "posts/other/study-guides/elements-stat-learning.html#classes-of-restricted-estimators",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.8 Classes of restricted estimators",
+    "text": "2.8 Classes of restricted estimators\nEach class has parameters called smoothing parameters that control the size of the local neighborhood.\n\n2.8.1 Roughness penalty and Bayesian methods\nPenalizes RSS -&gt; PRSS: \\(PRSS(f; \\lambda) = RSS(f) + \\lambda J(f)\\)\n\n\\(J(f)\\) = penalty functions AKA regularization methods\n\n\\(J(f)\\) is a user-selected function\n\\(J(f)\\) will be large for functions that vary rapidly over small regions of input space\ntypes\n\nadditive penalties are used with additive functions\n\n\\(J(f)\\) corresponds to a log-prior; PRSS -&gt; log-posterior distribution\n\nminimizing PRSS = finding the posterior mode\n\n\n\n\n\n2.8.2 Kernel methods and local regression\nSpecify the nature of the local neighborhood and of the class of regular functions fitted locally.\nThe local neighborhood is specified by the kernel function \\(K_{\\lambda}(x_0, x)\\)\n\nassigns weights to points x in a region around \\(x_0\\)\nexamples\n\nGuassian kernal leverages the Guassian [probability] density function\nNadaraya-Watson weighted average\n\n\n\n\n2.8.3 Basis functions and dictionary methods\nBasis methods AKA dictionary methods\n\npolynomial expansion\nlinear expansion: \\(f_\\theta(x) = \\sum_{m=1}^M \\theta_m h_m(x)\\)\n\n\\(h_m\\) is a function of the input \\(x\\)\nlinear in regards to the parameter \\(\\theta\\)\n\nradial basis functions\n\nsymmetric \\(p\\)-dimensional kernels located at particlar centroids: \\(f_\\theta(x) = \\sum_{m=1}^M K_{\\lambda_m} (\\mu_m, x) \\theta_m\\)\ncentroids \\(\\mu_m\\), scales \\(\\lambda_m\\)\n\n\nFor kernel methods, the [hyper] parameters convert the optimization problem from a straightforward linear problem into a combinatorially hard nonlinear problem.\nsingle-layer feed-forward neural network with linear output weights is similar to an adaptive basis function: \\(f_\\theta(x) = \\sum_{m=1}^M \\beta_m \\sigma (\\alpha^T_m x + b_m)\\). Where \\(\\sigma(x) = \\frac{1}{1 + e^{-x}}\\) is known as the activation function",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/elements-stat-learning.html#model-selection-and-the-bias-variance-tradeoff",
+    "href": "posts/other/study-guides/elements-stat-learning.html#model-selection-and-the-bias-variance-tradeoff",
+    "title": "The Elements of Statistical Learning",
+    "section": "2.9 Model selection, and the bias-variance tradeoff",
+    "text": "2.9 Model selection, and the bias-variance tradeoff\nCan’t use the training data to estimate the smoothing or complexity parameters because the solution is always to overfit to the data, i.e., choose the smallest neighborood.\nTest or generalization error.\nTypes of errors:\n\nirreducible error - can’t do anything about this\nbias - \\(Y - \\hat{Y}\\) or more statistically \\(E[Y] - E[\\hat{Y}]\\); how off the estimator is from the truth/ true mean\nvariance - \\(\\sigma^2\\)\n\nBias-variance tradeoff - as model complexity increases the variance tends to increase while the bias decreases.\nSR: Implies there’s a relationship between complexity and overfitting",
+    "crumbs": [
+      "Other",
+      "Study Guides",
+      "The Elements of Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "posts/other/study-guides/study-guides.html",
+    "href": "posts/other/study-guides/study-guides.html",
+    "title": "Study Guides",
+    "section": "",
+    "text": "I love to learn. Truly. According to Gallop Strengths, Strengths Finder, or whatever it’s called now Learner is my top strength. I’ve taken the assessment multiple times over the years and Learner is always on top.\nAs a Learner, I often read technical books. When I read such books I usually take notes in case I need to revisit the key takeaways. This is a landing page for my notes.\n\nDSA\nThe Elements of Statistical Learning",
+    "crumbs": [
+      "Other",
+      "Study Guides"
     ]
   },
   {

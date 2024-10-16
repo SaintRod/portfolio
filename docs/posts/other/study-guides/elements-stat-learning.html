@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data structures and algorithms – Santiago Rodriguez</title>
+<title>The Elements of Statistical Learning – Santiago Rodriguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../static/favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../posts/other/study-guides/dsa.html" rel="prev">
+<link href="../../../static/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,8 +68,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -78,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Santiago Rodriguez</span>
     </a>
   </div>
@@ -89,17 +119,17 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">Portfolio</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../../posts/resume/resume.pdf"> <i class="bi bi-file-person-fill" role="img">
+    <a class="nav-link" href="../../../posts/resume/resume.pdf"> <i class="bi bi-file-person-fill" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -129,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/other/other.html">Other</a></li><li class="breadcrumb-item"><a href="../../posts/other/dsa.html">Data structures and algorithms</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/other/other.html">Other</a></li><li class="breadcrumb-item"><a href="../../../posts/other/study-guides/study-guides.html">Study Guides</a></li><li class="breadcrumb-item"><a href="../../../posts/other/study-guides/elements-stat-learning.html">The Elements of Statistical Learning</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/blogs/blogs.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/blogs/blogs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blogs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -160,13 +190,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/blogs/fda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/blogs/fda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functional Data Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/blogs/personal.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/blogs/personal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">My Personal Blog</span></a>
   </div>
 </li>
@@ -174,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/projects.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -183,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/analyses/analyses.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/analyses/analyses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyses</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -192,13 +222,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/analyses/arxiv-stats-pkgs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/analyses/arxiv-stats-pkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arxiv Packages Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/analyses/internet-outage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Internet Outage Detection</span></a>
   </div>
 </li>
@@ -206,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/data/data.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/data/data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -215,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/data/household-energy-pipeline.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/data/household-energy-pipeline.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Household Energy Consumption Data Pipeline</span></a>
   </div>
 </li>
@@ -223,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/stats/stats.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/stats/stats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stats</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -232,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/stats/hypothesis-testing-primer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/stats/hypothesis-testing-primer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A Primer on Hypothesis Testing</span></a>
   </div>
 </li>
@@ -240,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/time-series/time-series.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/time-series/time-series.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Time Series</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -249,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/time-series/household-forecasting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/time-series/household-forecasting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Forecasting My Household’s Energy Consumption</span></a>
   </div>
 </li>
@@ -257,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/tools/tools.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/tools/tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -266,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/tools/mult-lang-proj-template.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/tools/mult-lang-proj-template.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A Language agnostic project template</span></a>
   </div>
 </li>
@@ -274,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/viz/viz.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/viz/viz.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualizations</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -283,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/viz/job-search-dashboard.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/viz/job-search-dashboard.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A Job Search Tracker</span></a>
   </div>
 </li>
@@ -291,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/projects/web-apps/web-apps.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/projects/web-apps/web-apps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Web Apps</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -300,13 +330,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/web-apps/tpwd.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/web-apps/tpwd.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Texas Parks &amp; Wildlife</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/projects/web-apps/strat-sampling-tool.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/projects/web-apps/strat-sampling-tool.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stratified Sampling</span></a>
   </div>
 </li>
@@ -316,7 +346,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/talks/talks.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/talks/talks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Talks</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -325,7 +355,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/talks/r-in-energy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/talks/r-in-energy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R in Energy</span></a>
   </div>
 </li>
@@ -333,19 +363,36 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/other/other.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../posts/other/other.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../posts/other/study-guides/study-guides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/other/dsa.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/other/study-guides/dsa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data structures and algorithms</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/other/study-guides/elements-stat-learning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">The Elements of Statistical Learning</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -353,21 +400,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/other/other.html">Other</a></li><li class="breadcrumb-item"><a href="../../posts/other/dsa.html">Data structures and algorithms</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/other/other.html">Other</a></li><li class="breadcrumb-item"><a href="../../../posts/other/study-guides/study-guides.html">Study Guides</a></li><li class="breadcrumb-item"><a href="../../../posts/other/study-guides/elements-stat-learning.html">The Elements of Statistical Learning</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Data structures and algorithms</h1>
+<h1 class="title">The Elements of Statistical Learning</h1>
+<p class="subtitle lead">Notes by Santiago Rodriguez</p>
 </div>
 
 
@@ -384,22 +426,225 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about" class="level1">
-<h1>About</h1>
-<p>I find it helpful to make my notes available online so that I can access them from anywhere. The following notes are from lessons on data structures and algorithms.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Ch 2. Overview of Supervised Learning</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Ch 3. Linear methods for regression</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="variable-types-and-terminology" class="level2">
+<h2 class="anchored" data-anchor-id="variable-types-and-terminology">2.2 Variable types and terminology</h2>
 <ul>
-<li><a href="https://saintrod.github.io/data-strucs-and-algos/posts/data-structures/post.html">data structures</a></li>
-<li><a href="https://saintrod.github.io/data-strucs-and-algos/posts/algorithms/post.html">algorithms</a></li>
+<li><span class="math inline">\(\vec{Y}\)</span>: response variable, dependent variable, outcome, regressor, target</li>
+<li><span class="math inline">\(X\)</span>: feature matrix, predictors, independent variables</li>
 </ul>
-<p>The course provided Python examples, and I replicated these examples using Julia and R.</p>
-<ul>
-<li><a href="https://github.com/SaintRod/data-strucs-and-algos/tree/main/code/julia">Julia</a></li>
-<li><a href="https://github.com/SaintRod/data-strucs-and-algos/tree/main/code/py">Python</a></li>
-<li><a href="https://github.com/SaintRod/data-strucs-and-algos/tree/main/code/r">R</a></li>
-</ul>
-
-
+<p>Qualitative <span class="math inline">\(\vec{Y}\)</span>: categorical (nominal, ordinal), discrete, or factors (with <span class="math inline">\(f\)</span> levels)</p>
+<p>Quantitative <span class="math inline">\(\vec{Y}\)</span>: regression Qualitative <span class="math inline">\(\vec{Y}\)</span>: classification</p>
+<p>Binary qualitative <span class="math inline">\(\vec{x}\)</span>: usually coded as {0, 1} | {-1, 1}</p>
+<p>Qualitative <span class="math inline">\(\vec{x}\)</span> with <span class="math inline">\(\gt 2\)</span> levels: dummy variables (where <span class="math inline">\(l-1\)</span> variables are created)</p>
 </section>
+<section id="two-simple-approaches-least-squares-vs-nearest-neighbors" class="level2">
+<h2 class="anchored" data-anchor-id="two-simple-approaches-least-squares-vs-nearest-neighbors">2.3 Two simple approaches: least squares vs nearest neighbors</h2>
+<p>First implicit mention of bias variance tradeoff. The more flexible a model, the lower the bias but higiher the variance. Vice versa, the more inflexible a model, the greather the bias but lower the variance.</p>
+<section id="linear-models-and-least-squares" class="level3">
+<h3 class="anchored" data-anchor-id="linear-models-and-least-squares">2.3.1 Linear models and least squares</h3>
+<p><span class="math inline">\(\hat{Y} = \hat{\beta_0} + \sum_{j=1}^{p} X_j \hat{\beta_j}\)</span></p>
+<p>or</p>
+<p><span class="math inline">\(\hat{Y} = X^{\top} \hat{\beta}\)</span></p>
+<ul>
+<li><span class="math inline">\(\hat{\beta_0}\)</span>: intercept or bias (in ML lore)</li>
+</ul>
+<p>Most common way to fit the linear model is least squares.</p>
+<p>The task is to minimize the residual sum of squares (RSS):</p>
+<p><span class="math inline">\(RSS(\beta) = \sum_{i=1}^{N} (y_i - \hat{y_i})^2\)</span></p>
+<p>Degress of freedom: <span class="math inline">\(N - p\)</span></p>
+</section>
+<section id="nearest-neighbor-methods" class="level3">
+<h3 class="anchored" data-anchor-id="nearest-neighbor-methods">2.3.2 Nearest-neighbor methods</h3>
+<p><span class="math inline">\(\hat{Y} = \frac{1}{k} \sum_{x_i \in N_k (x)} y_i\)</span></p>
+<p>Where <span class="math inline">\(N_k (x)\)</span> = neighborhood of <span class="math inline">\(x\)</span> defined by <span class="math inline">\(k\)</span> closest observations.</p>
+<p>Degress of freedom: <span class="math inline">\(\frac{N}{k}\)</span></p>
+<p>First mention of not using training data to assess fit.</p>
+</section>
+</section>
+<section id="statistical-decision-theory" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-decision-theory">2.4 Statistical decision theory</h2>
+<p><span class="math inline">\(X\)</span> and <span class="math inline">\(\vec{Y}\)</span> ~ <span class="math inline">\(P(X, Y)\)</span> = a joint distribution.</p>
+<p>The task is to <span class="math inline">\(\approx\)</span> a function <span class="math inline">\(f(X)\)</span> for prediction <span class="math inline">\(Y\)</span> given the values of <span class="math inline">\(X\)</span>.</p>
+<p>Loss function: <span class="math inline">\(L(Y, f(x))\)</span></p>
+<p>The most common loss function is <em>squared error loss</em>: <span class="math inline">\((Y - f(x))^2\)</span></p>
+<ul>
+<li>known as the <span class="math inline">\(L_2\)</span> loss</li>
+<li>mean</li>
+<li>optimization: minimize: <span class="math inline">\(argmin_c E_{Y | X} ([Y-c]^2 | X = x)\)</span></li>
+<li>solution to ^ = the regression function or conditional expectation: <span class="math inline">\(f(x) = E(Y | X = x)\)</span></li>
+<li>the best prediction for <span class="math inline">\(Y\)</span> for any <span class="math inline">\(X = x\)</span> is the conditional mean when measured by average squared error</li>
+</ul>
+<p>Why not alwasys use the most flexible model? If the data is best approximated by a linear, parametric, or inflexible model is more appropriate then can usually get more stable estimates.</p>
+<p>First mention of the <em>curse of dimensionality</em>. For nearest neighbors methods, as <span class="math inline">\(p\)</span> - number of predictors - increases, the number of observations at <span class="math inline">\(k\)</span> decreases. The asymptotic approximations still hold, but the rate at which convergence occurs slows.</p>
+<p>Ultimately, both the model-centric or parametric and nearest neighbors approachs <span class="math inline">\(\approx\)</span> the conditional expectations via averages.</p>
+<p><span class="math inline">\(L_1 = |Y - \hat{Y}|\)</span> = median(<span class="math inline">\(Y | X = x\)</span>) - the median of the conditional expectation.</p>
+<ul>
+<li>more robust than <span class="math inline">\(L_2\)</span> loss, i.e., less sensitive to extreme values</li>
+<li>non-convex optimization problem,i.e., discontinuities in the derivative</li>
+</ul>
+<p>……………………..</p>
+<p>What about qualitative <span class="math inline">\(Y\)</span>?</p>
+<ul>
+<li><em>zero-one loss</em>: missiclassifications are coded as 1
+<ul>
+<li>EPE = <span class="math inline">\(E[L(G, \hat{G}(X))]\)</span></li>
+<li><span class="math inline">\(\hat{G} = argmin_{g \in G} [1 - P(g | X = x)]\)</span>
+<ul>
+<li>or, <span class="math inline">\(\hat{G} = G_k\)</span> if <span class="math inline">\(P(G_k | X = x) = max_{g \in G} P(g | X = x)\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>This is known at the <em>Bayes classifier</em>: classify to the most probable class The error rate for the Bayes classifier = <em>Bayes rate</em>.</p>
+</section>
+<section id="local-methods-in-high-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="local-methods-in-high-dimensions">2.5 Local methods in high dimensions</h2>
+<p>Formally discusses the <em>curse of dimensionality</em>.</p>
+<p>Hypothetical scenario for nearest neighbor. Assume the data is uniformily distrubuted in a p-dimensional unit hypercube (figure 2.6 p.&nbsp;23). The notion of local average breaks down quickly. For example, in 10 dimensions (<span class="math inline">\(p\)</span> = 10) to capture 1% or 10% of the data for a local average, need 63% or 80% of the range of each predictor.</p>
+<p>Another issue with high dimensions is that all obsevations are near an edge (and far away from other observations). This is an issue because prediction is harder at the boundries.</p>
+<p>Sampling density is proportional to <span class="math inline">\(N^{\frac{1}{p}}\)</span> where <span class="math inline">\(p\)</span> = dimension of the input space (i.e., number of columns in <span class="math inline">\(X\)</span>). If <span class="math inline">\(p\)</span> = 1 and <span class="math inline">\(N\)</span> = 100, then to acheive the same sampling density the sample size required is <span class="math inline">\(N_10 = 100^{10}\)</span>.</p>
+<p>……………………..</p>
+<p><em>Bias-variance decomposition</em> AKA bias-variance tradeoff.</p>
+<p>MSE = Mean Squared Error</p>
+<ul>
+<li><span class="math inline">\(E[y - \hat{y}]^2\)</span></li>
+<li><span class="math inline">\(E[\hat{y} - E(\hat{y})]^2 + [E(\hat{y}) - y]^2\)</span></li>
+<li>Var(<span class="math inline">\(\hat{y}\)</span>) + Bias<span class="math inline">\(^2(\hat{y})\)</span></li>
+<li>Var + Bias<span class="math inline">\(^2\)</span></li>
+</ul>
+<p>To estiamte functions with many variables, need large training data. More variables, more data.</p>
+<p>……………………..</p>
+<p>When the assumptions are apporpriate, the linear model is unbiased (BLUE = best linear unbiased estimator). That is, MSE only depends on the variance term. If, however, the assumptions are inapporpriate, then the model is biased.</p>
+</section>
+<section id="statistical-models-supervised-learning-and-function-approximation" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-models-supervised-learning-and-function-approximation">2.6 Statistical models, supervised learning, and function approximation</h2>
+<section id="a-statistical-model-for-the-join-distribution-px-y" class="level3">
+<h3 class="anchored" data-anchor-id="a-statistical-model-for-the-join-distribution-px-y">2.6.1 A statistical model for the join distribution <span class="math inline">\(P(X, Y)\)</span></h3>
+<p>The additive model: <span class="math inline">\(Y = f(X) + \epsilon\)</span></p>
+<p><em>Additive</em> in the sense that the error term is <em>added</em> to the function results.</p>
+<p>This form is not usually applied to qualitative <span class="math inline">\(Y\)</span>.</p>
+</section>
+<section id="supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="supervised-learning">2.6.2 Supervised learning</h3>
+<p>The supervised learning paradigm.</p>
+<p>Learn <span class="math inline">\(f()\)</span> by example through a <em>teacher</em>.</p>
+<p>Uses a <em>training</em> set as a sample of the full data.</p>
+<p>The <em>learning algorithm</em> <em>learns by example</em>.</p>
+</section>
+<section id="function-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="function-approximation">2.6.3 Function approximation</h3>
+<p>Computer science -&gt; supervised learning paradigm</p>
+<p>While applied math and statistics -&gt; function approximation and estimation.</p>
+<p>SR: Leo B. “the two cultures”</p>
+<p>It can be useful to approach supervised learning as a problem in funciton approximation because it encourages geometrical concepts. This is the approach of this book.</p>
+<p>Another class of useful approximators is the <em>linear basis expansion</em>: <span class="math inline">\(f_{\theta}(x) = \sum_{i=1}^{K} h_k (x) \theta_k\)</span></p>
+<p>Where <span class="math inline">\(h_k()\)</span> are functions or transformations of the input vector <span class="math inline">\(\vec{x}\)</span>. Examples: polynomial or trigonometric expansions, and nonlinear expansions such as the sigmoid transformation: <span class="math inline">\(\frac{1}{1 + e^{-x}}\)</span></p>
+<p>……………………..</p>
+<p>Least squares is convenient it is not the only criteria. There are also iterative and numerical optimization methods.</p>
+<p>A more general estimation method is <em>maximum likelihood estimation</em>.</p>
+<ul>
+<li><span class="math inline">\(L(\theta)\)</span> = Likelihood function</li>
+<li>Assumes that the <em>most reasonable</em> (read likely) values for <span class="math inline">\(\theta\)</span> [wrt to the Likelihood function] are those for which the probability of the observed sample is largest</li>
+<li>Least squares is a special case of MLE that uses the conditional likelihood: <span class="math inline">\(P(Y | X, \theta) = N(f_{\theta}(X), \sigma^2)\)</span></li>
+<li>Another example is the multinomial likelihood function <span class="math inline">\(P(G | X)\)</span>
+<ul>
+<li>log-likelihood: <span class="math inline">\(L(\theta) = \sum_{i=1}^{N} log \ p_{g_i, \theta} (x_i)\)</span></li>
+<li>Also known as <em>cross-entropy</em> loss</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="structured-regression-models" class="level2">
+<h2 class="anchored" data-anchor-id="structured-regression-models">2.7 Structured regression models</h2>
+<section id="difficulty-of-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="difficulty-of-the-problem">2.7.1 Difficulty of the problem</h3>
+<p>There may exist infinitely many solutions to the optimization probelm (i.e., minizing the loss function). It’s useful to enforce restrictions. The restrictions are sometimes encoded into the parametric function <span class="math inline">\(\hat{f}()\)</span> or may be built into the learning method itself. Most restrictions can be described as <em>complexity</em> restrictions - usually means some kind of regular behavior in small neighborhoods of the input space.</p>
+<p>The strength of the constraint depends on the neighborhood size. The larger the neighborhood, the stronger the constraint, and more sensitive the solution is to the choice of constraint. For example, local linear fits on tiny neighborhoods is [practically] no constraint at all. While local linear fits in large neighborhoods is <span class="math inline">\(\approx\)</span> globally linear model and is very restrictive.</p>
+<p><strong>Takeaway</strong>: any method that attempts to produce locally varying functions in small isotropic (read homogeneous) neighborhoods will struggle in high dimensions</p>
+<blockquote class="blockquote">
+<p>isotropic: (of an object or substance) having a physical property which has the same value when measured in different directions</p>
+</blockquote>
+</section>
+</section>
+<section id="classes-of-restricted-estimators" class="level2">
+<h2 class="anchored" data-anchor-id="classes-of-restricted-estimators">2.8 Classes of restricted estimators</h2>
+<p>Each class has parameters called <em>smoothing</em> parameters that control the size of the local neighborhood.</p>
+<section id="roughness-penalty-and-bayesian-methods" class="level3">
+<h3 class="anchored" data-anchor-id="roughness-penalty-and-bayesian-methods">2.8.1 Roughness penalty and Bayesian methods</h3>
+<p>Penalizes RSS -&gt; PRSS: <span class="math inline">\(PRSS(f; \lambda) = RSS(f) + \lambda J(f)\)</span></p>
+<ul>
+<li><span class="math inline">\(J(f)\)</span> = penalty functions AKA <em>regularization</em> methods
+<ul>
+<li><span class="math inline">\(J(f)\)</span> is a user-selected function</li>
+<li><span class="math inline">\(J(f)\)</span> will be large for functions that vary rapidly over small regions of input space</li>
+<li>types
+<ul>
+<li>additive penalties are used with additive functions</li>
+</ul></li>
+<li><span class="math inline">\(J(f)\)</span> corresponds to a log-prior; PRSS -&gt; log-posterior distribution
+<ul>
+<li>minimizing PRSS = finding the posterior mode</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="kernel-methods-and-local-regression" class="level3">
+<h3 class="anchored" data-anchor-id="kernel-methods-and-local-regression">2.8.2 Kernel methods and local regression</h3>
+<p>Specify the nature of the local neighborhood and of the class of regular functions fitted locally.</p>
+<p>The local neighborhood is specified by the <em>kernel function</em> <span class="math inline">\(K_{\lambda}(x_0, x)\)</span></p>
+<ul>
+<li>assigns weights to points x in a region around <span class="math inline">\(x_0\)</span></li>
+<li>examples
+<ul>
+<li>Guassian kernal leverages the Guassian [probability] density function</li>
+<li>Nadaraya-Watson weighted average</li>
+</ul></li>
+</ul>
+</section>
+<section id="basis-functions-and-dictionary-methods" class="level3">
+<h3 class="anchored" data-anchor-id="basis-functions-and-dictionary-methods">2.8.3 Basis functions and dictionary methods</h3>
+<p>Basis methods AKA <em>dictionary</em> methods</p>
+<ul>
+<li>polynomial expansion</li>
+<li>linear expansion: <span class="math inline">\(f_\theta(x) = \sum_{m=1}^M \theta_m h_m(x)\)</span>
+<ul>
+<li><span class="math inline">\(h_m\)</span> is a function of the input <span class="math inline">\(x\)</span></li>
+<li>linear in regards to the parameter <span class="math inline">\(\theta\)</span></li>
+</ul></li>
+<li>radial basis functions
+<ul>
+<li>symmetric <span class="math inline">\(p\)</span>-dimensional kernels located at particlar centroids: <span class="math inline">\(f_\theta(x) = \sum_{m=1}^M K_{\lambda_m} (\mu_m, x) \theta_m\)</span></li>
+<li>centroids <span class="math inline">\(\mu_m\)</span>, scales <span class="math inline">\(\lambda_m\)</span></li>
+</ul></li>
+</ul>
+<p>For kernel methods, the [hyper] parameters convert the optimization problem from a straightforward linear problem into a combinatorially hard nonlinear problem.</p>
+<p>single-layer feed-forward neural network with linear output weights is similar to an adaptive basis function: <span class="math inline">\(f_\theta(x) = \sum_{m=1}^M \beta_m \sigma (\alpha^T_m x + b_m)\)</span>. Where <span class="math inline">\(\sigma(x) = \frac{1}{1 + e^{-x}}\)</span> is known as the <em>activation</em> function</p>
+</section>
+</section>
+<section id="model-selection-and-the-bias-variance-tradeoff" class="level2">
+<h2 class="anchored" data-anchor-id="model-selection-and-the-bias-variance-tradeoff">2.9 Model selection, and the bias-variance tradeoff</h2>
+<p>Can’t use the training data to estimate the <em>smoothing</em> or <em>complexity</em> parameters because the solution is always to overfit to the data, i.e., choose the smallest neighborood.</p>
+<p><em>Test</em> or <em>generalization</em> error.</p>
+<p>Types of errors:</p>
+<ul>
+<li><em>irreducible</em> error - can’t do anything about this</li>
+<li>bias - <span class="math inline">\(Y - \hat{Y}\)</span> or more statistically <span class="math inline">\(E[Y] - E[\hat{Y}]\)</span>; how <em>off</em> the estimator is from the truth/ true mean</li>
+<li>variance - <span class="math inline">\(\sigma^2\)</span></li>
+</ul>
+<p><em>Bias-variance tradeoff</em> - as <em>model complexity</em> increases the variance tends to increase while the bias decreases.</p>
+<p>SR: Implies there’s a relationship between complexity and overfitting</p>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+
+</div>
+</div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -822,6 +1067,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../posts/other/study-guides/dsa.html" class="pagination-link" aria-label="Data structures and algorithms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data structures and algorithms</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
