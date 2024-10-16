@@ -15,5 +15,5 @@ As a Learner, I often read technical books.
 When I read such books I usually take notes in case I need to revisit the key takeaways.
 This is a landing page for my notes.
 
-- [DSA](#dsa.qmd)
-- [The Elements of Statistical Learning](#elements-stat-learning.qmd)
+- [DSA](dsa.qmd)
+- [The Elements of Statistical Learning](elements-stat-learning.qmd)

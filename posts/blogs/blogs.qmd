@@ -13,5 +13,5 @@ So, I write on open platforms, such as GitHub Pages or [Quarto Pubs](https://qua
 In this section you'll find collections of writings.
 Enjoy!
 
-- [Functional data analysis](#fda.qmd)
-- [Personal blog about data stuff](#personal.qmd)
+- [Functional data analysis](fda.qmd)
+- [Personal blog about data stuff](personal.qmd)
