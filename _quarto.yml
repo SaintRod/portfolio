@@ -79,7 +79,11 @@ website:
         - section: Other
           href: posts/other/other.qmd
           contents:
-            - posts/other/dsa.qmd
+            section: Study Guides
+            href: posts/other/study-guides/study-guides.qmd
+            contents:
+              - posts/other/study-guides/dsa.qmd
+              - posts/other/study-guides/elements-stat-learning.qmd
 
   page-footer: 
     background: dark 

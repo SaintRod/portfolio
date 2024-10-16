@@ -1,0 +1,271 @@
+---
+title: The Elements of Statistical Learning
+subtitle: Notes by Santiago Rodriguez
+format:
+  html:
+    toc: true
+    number-sections: false
+    page-navigation: true
+editor: source
+---
+
+::: {.panel-tabset}
+
+# Ch 2. Overview of Supervised Learning
+
+## 2.2 Variable types and terminology
+
+- $\vec{Y}$: response variable, dependent variable, outcome, regressor, target
+- $X$: feature matrix, predictors, independent variables
+
+Qualitative $\vec{Y}$: categorical (nominal, ordinal), discrete, or factors (with $f$ levels)
+
+Quantitative $\vec{Y}$: regression
+Qualitative $\vec{Y}$: classification
+
+Binary qualitative $\vec{x}$: usually coded as {0, 1} | {-1, 1}
+
+Qualitative $\vec{x}$ with $\gt 2$ levels: dummy variables (where $l-1$ variables are created)
+
+## 2.3 Two simple approaches: least squares vs nearest neighbors
+
+First implicit mention of bias variance tradeoff.
+The more flexible a model, the lower the bias but higiher the variance.
+Vice versa, the more inflexible a model, the greather the bias but lower the variance.
+
+### 2.3.1 Linear models and least squares
+
+$\hat{Y} = \hat{\beta_0} + \sum_{j=1}^{p} X_j \hat{\beta_j}$
+
+or
+
+$\hat{Y} = X^{\top} \hat{\beta}$
+
+- $\hat{\beta_0}$: intercept or bias (in ML lore)
+
+Most common way to fit the linear model is least squares.
+
+The task is to minimize the residual sum of squares (RSS):
+
+$RSS(\beta) = \sum_{i=1}^{N} (y_i - \hat{y_i})^2$
+
+Degress of freedom: $N - p$
+
+### 2.3.2 Nearest-neighbor methods
+
+$\hat{Y} = \frac{1}{k} \sum_{x_i \in N_k (x)} y_i$
+
+Where $N_k (x)$ = neighborhood of $x$ defined by $k$ closest observations.
+
+Degress of freedom: $\frac{N}{k}$
+
+First mention of not using training data to assess fit.
+
+## 2.4 Statistical decision theory
+
+$X$ and $\vec{Y}$ ~ $P(X, Y)$ = a joint distribution.
+
+The task is to $\approx$ a function $f(X)$ for prediction $Y$ given the values of $X$.
+
+Loss function: $L(Y, f(x))$
+
+The most common loss function is *squared error loss*: $(Y - f(x))^2$
+
+- known as the $L_2$ loss
+- mean
+- optimization: minimize: $argmin_c E_{Y | X} ([Y-c]^2 | X = x)$
+- solution to ^ = the regression function or conditional expectation: $f(x) = E(Y | X = x)$
+- the best prediction for $Y$ for any $X = x$ is the conditional mean when measured by average squared error
+
+Why not alwasys use the most flexible model?
+If the data is best approximated by a linear, parametric, or inflexible model is more appropriate then can usually get more stable estimates.
+
+First mention of the *curse of dimensionality*.
+For nearest neighbors methods, as $p$ - number of predictors - increases, the number of observations at $k$ decreases.
+The asymptotic approximations still hold, but the rate at which convergence occurs slows.
+
+Ultimately, both the model-centric or parametric and nearest neighbors approachs $\approx$ the conditional expectations via averages.
+
+$L_1 = |Y - \hat{Y}|$ = median($Y | X = x$) - the median of the conditional expectation.
+
+- more robust than $L_2$ loss, i.e., less sensitive to extreme values
+- non-convex optimization problem,i.e., discontinuities in the derivative
+
+..........................
+
+What about qualitative $Y$?
+
+- *zero-one loss*: missiclassifications are coded as 1
+  - EPE = $E[L(G, \hat{G}(X))]$
+  - $\hat{G} = argmin_{g \in G} [1 - P(g | X = x)]$
+    - or, $\hat{G} = G_k$ if $P(G_k | X = x) = max_{g \in G} P(g | X = x)$
+
+This is known at the *Bayes classifier*: classify to the most probable class
+The error rate for the Bayes classifier = *Bayes rate*.
+
+## 2.5 Local methods in high dimensions
+
+Formally discusses the *curse of dimensionality*.
+
+Hypothetical scenario for nearest neighbor.
+Assume the data is uniformily distrubuted in a p-dimensional unit hypercube (figure 2.6 p. 23).
+The notion of local average breaks down quickly.
+For example, in 10 dimensions ($p$ = 10) to capture 1% or 10% of the data for a local average, need 63% or 80% of the range of each predictor.
+
+Another issue with high dimensions is that all obsevations are near an edge (and far away from other observations).
+This is an issue because prediction is harder at the boundries.
+
+Sampling density is proportional to $N^{\frac{1}{p}}$ where $p$ = dimension of the input space (i.e., number of columns in $X$).
+If $p$ = 1 and $N$ = 100, then to acheive the same sampling density the sample size required is $N_10 = 100^{10}$.
+
+..........................
+
+*Bias-variance decomposition* AKA bias-variance tradeoff.
+
+MSE = Mean Squared Error
+
+- $E[y - \hat{y}]^2$
+- $E[\hat{y} - E(\hat{y})]^2 + [E(\hat{y}) - y]^2$
+- Var($\hat{y}$) + Bias$^2(\hat{y})$
+- Var + Bias$^2$
+
+To estiamte functions with many variables, need large training data.
+More variables, more data.
+
+..........................
+
+When the assumptions are apporpriate, the linear model is unbiased (BLUE = best linear unbiased estimator).
+That is, MSE only depends on the variance term.
+If, however, the assumptions are inapporpriate, then the model is biased.
+
+## 2.6 Statistical models, supervised learning, and function approximation
+
+### 2.6.1 A statistical model for the join distribution $P(X, Y)$
+
+The additive model:  $Y = f(X) + \epsilon$
+
+*Additive* in the sense that the error term is *added* to the function results.
+
+This form is not usually applied to qualitative $Y$.
+
+### 2.6.2 Supervised learning
+
+The supervised learning paradigm.
+
+Learn $f()$ by example through a *teacher*.
+
+Uses a *training* set as a sample of the full data.
+
+The *learning algorithm* *learns by example*.
+
+### 2.6.3 Function approximation
+
+Computer science -> supervised learning paradigm
+
+While applied math and statistics -> function approximation and estimation.
+
+SR: Leo B. "the two cultures"
+
+It can be useful to approach supervised learning as a problem in funciton approximation because it encourages geometrical concepts.
+This is the approach of this book.
+
+Another class of useful approximators is the *linear basis expansion*: $f_{\theta}(x) = \sum_{i=1}^{K} h_k (x) \theta_k$
+
+Where $h_k()$ are functions or transformations of the input vector $\vec{x}$.
+Examples: polynomial or trigonometric expansions, and nonlinear expansions such as the sigmoid transformation: $\frac{1}{1 + e^{-x}}$
+
+..........................
+
+Least squares is convenient it is not the only criteria.
+There are also iterative and numerical optimization methods.
+
+A more general estimation method is *maximum likelihood estimation*.
+
+- $L(\theta)$ = Likelihood function
+- Assumes that the *most reasonable* (read likely) values for $\theta$ [wrt to the Likelihood function] are those for which the probability of the observed sample is largest
+- Least squares is a special case of MLE that uses the conditional likelihood: $P(Y | X, \theta) = N(f_{\theta}(X), \sigma^2)$
+- Another example is the multinomial likelihood function $P(G | X)$
+  - log-likelihood: $L(\theta) = \sum_{i=1}^{N} log \ p_{g_i, \theta} (x_i)$
+  - Also known as *cross-entropy* loss
+
+## 2.7 Structured regression models
+
+### 2.7.1 Difficulty of the problem
+
+There may exist infinitely many solutions to the optimization probelm (i.e., minizing the loss function).
+It's useful to enforce restrictions.
+The restrictions are sometimes encoded into the parametric function $\hat{f}()$ or may be built into the learning method itself.
+Most restrictions can be described as *complexity* restrictions - usually means some kind of regular behavior in small neighborhoods of the input space.
+
+The strength of the constraint depends on the neighborhood size.
+The larger the neighborhood, the stronger the constraint, and more sensitive the solution is to the choice of constraint.
+For example, local linear fits on tiny neighborhoods is [practically] no constraint at all.
+While local linear fits in large neighborhoods is $\approx$ globally linear model and is very restrictive.
+
+**Takeaway**: any method that attempts to produce locally varying functions in small isotropic (read homogeneous) neighborhoods will struggle in high dimensions
+
+> isotropic: (of an object or substance) having a physical property which has the same value when measured in different directions
+
+## 2.8 Classes of restricted estimators
+
+Each class has parameters called *smoothing* parameters that control the size of the local neighborhood.
+
+### 2.8.1 Roughness penalty and Bayesian methods
+
+Penalizes RSS -> PRSS: $PRSS(f; \lambda) = RSS(f) + \lambda J(f)$
+
+- $J(f)$ = penalty functions AKA *regularization* methods
+  - $J(f)$ is a user-selected function
+  - $J(f)$ will be large for functions that vary rapidly over small regions of input space
+  - types
+    - additive penalties are used with additive functions
+  - $J(f)$ corresponds to a log-prior; PRSS -> log-posterior distribution
+    - minimizing PRSS = finding the posterior mode
+
+### 2.8.2 Kernel methods and local regression
+
+Specify the nature of the local neighborhood and of the class of regular functions fitted locally.
+
+The local neighborhood is specified by the *kernel function* $K_{\lambda}(x_0, x)$
+
+- assigns weights to points x in a region around $x_0$
+- examples
+  - Guassian kernal leverages the Guassian [probability] density function
+  - Nadaraya-Watson weighted average
+
+### 2.8.3 Basis functions and dictionary methods
+
+Basis methods AKA *dictionary* methods
+
+- polynomial expansion
+- linear expansion: $f_\theta(x) = \sum_{m=1}^M \theta_m h_m(x)$
+  - $h_m$ is a function of the input $x$
+  - linear in regards to the parameter $\theta$
+- radial basis functions
+  - symmetric $p$-dimensional kernels located at particlar centroids: $f_\theta(x) = \sum_{m=1}^M K_{\lambda_m} (\mu_m, x) \theta_m$
+  - centroids $\mu_m$, scales $\lambda_m$
+
+For kernel methods, the [hyper] parameters convert the optimization problem from a straightforward linear problem into a combinatorially hard nonlinear problem.
+
+single-layer feed-forward neural network with linear output weights is similar to an adaptive basis function: $f_\theta(x) = \sum_{m=1}^M \beta_m \sigma (\alpha^T_m x + b_m)$.
+Where $\sigma(x) = \frac{1}{1 + e^{-x}}$ is known as the *activation* function
+
+## 2.9 Model selection, and the bias-variance tradeoff
+
+Can't use the training data to estimate the *smoothing* or *complexity* parameters because the solution is always to overfit to the data, i.e., choose the smallest neighborood.
+
+*Test* or *generalization* error.
+
+Types of errors:
+
+- *irreducible* error - can't do anything about this
+- bias - $Y - \hat{Y}$ or more statistically $E[Y] - E[\hat{Y}]$; how *off* the estimator is from the truth/ true mean
+- variance - $\sigma^2$
+
+*Bias-variance tradeoff* - as *model complexity* increases the variance tends to increase while the bias decreases.
+
+SR: Implies there's a relationship between complexity and overfitting
+
+# Ch 3. Linear methods for regression
+
+:::
