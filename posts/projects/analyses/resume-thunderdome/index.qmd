@@ -1,0 +1,116 @@
+---
+title: Resume Thunderdome
+subtitle: A job application experiment
+date: 2024-10-22
+date-modified: ""
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-summary: Unhide
+    code-copy: true
+editor: source
+engine: knitr
+execute: 
+  warning: false
+  error: false
+  echo: true
+  freeze: true
+draft: true
+---
+
+
+# Planning
+
+- data
+  - import
+    - create quarto parameter
+    - vroom import
+  - prep
+    - standardize titles
+    - create level field; e.g., ds manager = 5
+- Descriptive
+  - days in market
+  - num jobs applied (i.e., sample size)
+    - overall
+    - by resume version
+    - by level
+  - rejections and interview by
+    - overall
+    - by resume version
+    - by level
+  - rejection and interview rates by
+    - overall
+    - by resume version
+    - by level
+  - Apps to
+    - same company
+    - same job
+- Stats analysis
+  - which resume version best? aka resume version A vs B
+    - def
+      - A: traditional 2 pager
+      - B: sleek 1 pager
+    - levels
+      - overall, all jobs
+      - for same company (sample size?)
+      - same jobs (sample size?)
+    - metrics
+        - int
+          - rejections
+          - interviews
+        - rates
+          - rejection rate
+          - interview rate
+  - which level does the market value me at?
+    - That is, which level has the highest interview rate or lowest rejection rate
+      - are the differences meaningful?
+    - metrics
+      - response rate (lower better)
+      - interview rate (higher better)
+    - is there a statistically significant difference by level?
+- Resources
+
+
+# TL;DR
+
+Results:
+
+- which version had the lowest rejection rate? was the difference statistically meaningful?
+- which version had the highest interview rate? was the difference statistically meaningful?
+
+
+# About
+
+Upon returning from parental leave in October 2024 I was notified that my team had been let go.
+Being the nerd that I am, I began tracking my applications.
+By date X, my wife reformatted my two-page resume into a sleep one-pager.
+Can you guess what we did next?
+If you said, AB test you're right.
+
+Additionally, at this time the job market was tough.
+So I also wanted to know what the market valued me as.
+
+My application strategy... spray and pray.
+Apply to all levels.
+This allows me to assess which levels I get interviews for.
+
+Caveats.
+This is not a *real* experiment.
+The results should be interpreted as *directional*.
+The availability of jobs at any given time makes x a random variable.
+A good modification would be to randomly assign a resume to a job but the sleek one-page version of my resume didn't exist until about two weeks into applications.
+
+# Descriptive
+
+
+
+# Statistical Analysis
+
+Two analyses:
+
+1. which resume version is *better*
+2. what job level does the market value me at?
+
+# Conclusions
