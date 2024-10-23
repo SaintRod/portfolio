@@ -20,7 +20,6 @@ execute:
 draft: true
 ---
 
-
 # Planning
 
 - data
@@ -71,6 +70,72 @@ draft: true
       - interview rate (higher better)
     - is there a statistically significant difference by level?
 - Resources
+
+```{r import}
+box::use(
+  here[here],
+  vroom[vroom],
+)
+
+# params
+data_filename <- "2024.csv"
+```
+
+```{r, get_data}
+#| echo: false
+
+# define path to the data
+path_data <- file.path(Sys.getenv("path_data"), data_filename)
+
+# check point: assess if file exists
+stopifnot(file.exists(path_data))
+
+# import
+df_jobs <- vroom(
+  file = path_data,
+  delim = ",",
+  show_col_types = FALSE,
+  guess_max = 1000
+)
+```
+
+```{r clean_cols_headers}
+# lower case
+names(df_jobs) = tolower(names(df_jobs))
+
+# keep only alphabetical characters
+names(df_jobs) = gsub("[^[:alpha:]]", "_", names(df_jobs))
+```
+
+```{r drop_cols}
+df_jobs = subset(df_jobs, select = -c(misc))
+```
+
+```{r standardize_text_cols}
+# company
+df_jobs[["company"]] = tolower(df_jobs[["company"]])
+
+# role
+df_jobs[["role"]] = tolower(df_jobs[["role"]])
+df_jobs[["role"]] = gsub("\\Wa\\W*i\\W", " ai ", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("/", " ", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("[[:punct:]]", "", df_jobs[["role"]])
+df_jobs[["role"]] = gsub(" {2,}", " ", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("sr *", "senior ", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("artificial intelligence", "ai", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("machine learning", "ml", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("vice president", "vp", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("decision science analyst senior", "senior data scientist", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("statistical operations analyst", "data scientist", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("data scientists", "data scientist", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("senior data scientist ml engineer", "senior data scientist", df_jobs[["role"]])
+df_jobs[["role"]] = gsub("quant analytics manager vp", "quant analytics manager", df_jobs[["role"]])
+df_jobs[["role"]] = trimws(df_jobs[["role"]])
+```
+
+```{r create_job_level}
+
+```
 
 
 # TL;DR
